@@ -1,0 +1,2660 @@
+
+PWMX.elf:     file format elf32-littleriscv
+PWMX.elf
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x00000004 memsz 0x00000004 flags r-x
+    LOAD off    0x00002000 vaddr 0x20000000 paddr 0x00000004 align 2**12
+         filesz 0x00000768 memsz 0x00000768 flags r-x
+    LOAD off    0x0000276c vaddr 0x0000076c paddr 0x0000076c align 2**12
+         filesz 0x00000888 memsz 0x00000888 flags r-x
+    LOAD off    0x00003768 vaddr 0x20000768 paddr 0x00000ff4 align 2**12
+         filesz 0x00000010 memsz 0x00000074 flags rw-
+    LOAD off    0x00004600 vaddr 0x20006600 paddr 0x20006600 align 2**12
+         filesz 0x00000000 memsz 0x00000200 flags rw-
+
+Sections:
+Idx Name            Size      VMA       LMA       File off  Algn  Flags
+  0 .init           00000004  00000000  00000000  00001000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .highcodelalign 00000000  00000004  00000004  00003778  2**0  CONTENTS
+  2 .highcode       00000768  20000000  00000004  00002000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .text           00000888  0000076c  0000076c  0000276c  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 .fini           00000000  00000ff4  00000ff4  00003778  2**0  CONTENTS, ALLOC, LOAD, CODE
+  5 .dalign         00000000  20000768  20000768  00003778  2**0  CONTENTS
+  6 .dlalign        00000000  00000ff4  00000ff4  00003778  2**0  CONTENTS
+  7 .data           00000010  20000768  00000ff4  00003768  2**2  CONTENTS, ALLOC, LOAD, DATA
+  8 .bss            00000064  20000778  00001004  00003778  2**2  ALLOC
+  9 .stack          00000200  20006600  20006600  00004600  2**0  ALLOC
+ 10 .debug_info     00004738  00000000  00000000  00003778  2**0  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_abbrev   00000ba2  00000000  00000000  00007eb0  2**0  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_aranges  000001a8  00000000  00000000  00008a58  2**3  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges   000001f8  00000000  00000000  00008c00  2**3  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_line     000029e8  00000000  00000000  00008df8  2**0  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_str      00000ddc  00000000  00000000  0000b7e0  2**0  CONTENTS, READONLY, DEBUGGING
+ 16 .comment        00000033  00000000  00000000  0000c5bc  2**0  CONTENTS, READONLY
+ 17 .debug_frame    000003d4  00000000  00000000  0000c5f0  2**2  CONTENTS, READONLY, DEBUGGING
+ 18 .debug_loc      00000b91  00000000  00000000  0000c9c4  2**0  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000 l    d  .init	00000000 .init
+00000004 l    d  .highcodelalign	00000000 .highcodelalign
+20000000 l    d  .highcode	00000000 .highcode
+0000076c l    d  .text	00000000 .text
+00000ff4 l    d  .fini	00000000 .fini
+20000768 l    d  .dalign	00000000 .dalign
+00000ff4 l    d  .dlalign	00000000 .dlalign
+20000768 l    d  .data	00000000 .data
+20000778 l    d  .bss	00000000 .bss
+20006600 l    d  .stack	00000000 .stack
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    df *ABS*	00000000 ./Startup/startup_CH592.o
+20000000 l       .highcode	00000000 _vector_base
+00000000 l    df *ABS*	00000000 CH59x_sys.c
+00000000 l    df *ABS*	00000000 ISP583.c
+20000354 l       .highcode	00000000 .loop18
+20000362 l       .highcode	00000000 .loop29
+20000370 l       .highcode	00000000 .loop40
+200005fc l       .highcode	00000000 .loop402
+00000000 l    df *ABS*	00000000 Main.c
+00000000 l    df *ABS*	00000000 ws2812.c
+00000000 l    df *ABS*	00000000 CH59x_gpio.c
+00000000 l    df *ABS*	00000000 strlen.c
+00000000 l    df *ABS*	00000000 strncpy.c
+00000a5e g     F .text	00000052 SendOnePix
+20000370 g     F .highcode	0000000e FLASH_ROM_OUT
+00000b54 g     F .text	0000002e SendOneFrame
+20000f78 g       .data	00000000 __global_pointer$
+2000030c g     F .highcode	0000000e mDelayuS
+2000028c  w    F .highcode	00000080 HardFault_Handler
+20000090  w      .highcode	00000000 GPIOB_IRQHandler
+20000090  w      .highcode	00000000 GPIOA_IRQHandler
+20000090  w      .highcode	00000000 SysTick_Handler
+00000b02 g     F .text	00000052 SendOnePix2
+20000090  w      .highcode	00000000 NMI_Handler
+20000090  w      .highcode	00000000 UART1_IRQHandler
+20000778 g       .bss	00000000 _sbss
+00000200 g       *ABS*	00000000 __stack_size
+00000a30 g     F .text	0000002e Set1Code2
+20000778 g     O .bss	00000004 ione
+20000362 g     F .highcode	0000000e FLASH_ROM_IN
+00000b82 g     F .text	0000002e SendOneFrame1
+20000090  w      .highcode	00000000 UART0_IRQHandler
+2000078c g     O .bss	00000004 numbertwo
+00000004 g       .init	00000000 _einit
+2000077c g     O .bss	00000004 ithree
+20000090  w      .highcode	00000000 BB_IRQHandler
+200003fe g     F .highcode	0000036a FLASH_EEPROM_CMD
+20000090  w      .highcode	00000000 Break_Point_Handler
+00000ebc g     F .text	000000a6 GPIOB_ModeCfg
+20000090  w      .highcode	00000000 TMR0_IRQHandler
+20000342 g     F .highcode	00000012 FLASH_ROM_BEG
+2000031a g     F .highcode	00000028 mDelaymS
+20000090  w      .highcode	00000000 Ecall_M_Mode_Handler
+20006600 g       .stack	00000000 _heap_end
+2000037e g     F .highcode	00000048 FLASH_ROM_ADDR
+20000768 g     O .data	0000000e message
+0000096e g     F .text	00000022 Set0Code
+20000090  w      .highcode	00000000 RTC_IRQHandler
+200007dc g       .bss	00000000 _ebss
+200003c6 g     F .highcode	00000038 FLASH_ROM_WAIT
+2000079c g     O .bss	00000009 buf1
+20000090  w      .highcode	00000000 UART2_IRQHandler
+20000090  w      .highcode	00000000 PWMX_IRQHandler
+20000780 g     O .bss	00000004 itwo
+00000a02 g     F .text	0000002e Set1Code1
+000009b2 g     F .text	00000022 Set0Code2
+200007a8 g     O .bss	00000009 buf2
+00000000 g       .init	00000000 _start
+20000090  w      .highcode	00000000 ADC_IRQHandler
+20000000 g       .highcode	00000000 _highcode_vma_start
+200007b4 g     O .bss	00000028 segments
+00000f74 g     F .text	00000024 strncpy
+20000090  w      .highcode	00000000 TMR2_IRQHandler
+20000768 g       .data	00000000 _data_vma
+00000ab0 g     F .text	00000052 SendOnePix1
+20000092 g     F .highcode	000001a2 SetSysClock
+20000090  w      .highcode	00000000 USB_IRQHandler
+20000090  w      .highcode	00000000 I2C_IRQHandler
+000009d4 g     F .text	0000002e Set1Code
+0000093c g     F .text	00000032 main
+00000990 g     F .text	00000022 Set0Code1
+0000081e g     F .text	0000011e strcmp
+20000784 g     O .bss	00000004 numberone
+00000004 g       .highcodelalign	00000000 _highcode_lma
+20000090  w      .highcode	00000000 LLE_IRQHandler
+00000000 g       .init	00000000 _sinit
+20000790 g     O .bss	00000009 buf
+20000090  w      .highcode	00000000 WDOG_BAT_IRQHandler
+20000090  w      .highcode	00000000 Ecall_U_Mode_Handler
+20000090  w      .highcode	00000000 TMR3_IRQHandler
+20000788 g     O .bss	00000004 numberthree
+20006800 g       .stack	00000000 _eusrstack
+20000090  w      .highcode	00000000 SW_Handler
+20000778 g       .data	00000000 _edata
+20000090  w      .highcode	00000000 SPI0_IRQHandler
+200007dc g       .bss	00000000 _end
+20000768 g       .highcode	00000000 _highcode_vma_end
+00000ff4 g       .dlalign	00000000 _data_lma
+0000076c  w      .text	00000000 handle_reset
+00000bde g     F .text	000002de chuli_proc
+00000f62 g     F .text	00000012 strlen
+20000090  w      .highcode	00000000 UART3_IRQHandler
+20000354 g     F .highcode	0000000e FLASH_ROM_END
+00000bb0 g     F .text	0000002e SendOneFrame2
+20000090  w      .highcode	00000000 TMR1_IRQHandler
+20000234 g     F .highcode	00000058 SYS_ResetExecute
+
+
+
+Disassembly of section .init:
+
+00000000 <_sinit>:
+_start():
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:17
+
+	.section	.init,"ax",@progbits
+	.global	_start
+	.align	1
+_start:
+	j	handle_reset
+   0:	76c0006f          	j	76c <handle_reset>
+
+Disassembly of section .highcode:
+
+20000000 <_highcode_vma_start>:
+	...
+_vector_base():
+20000008:	0090                	addi	a2,sp,64
+2000000a:	2000                	fld	fs0,0(s0)
+2000000c:	028c                	addi	a1,sp,320
+2000000e:	2000                	fld	fs0,0(s0)
+20000010:	bda9                	j	1ffffe6a <_data_lma+0x1fffee76>
+20000012:	f5f9                	bnez	a1,1fffffe0 <_data_lma+0x1fffefec>
+20000014:	0090                	addi	a2,sp,64
+20000016:	2000                	fld	fs0,0(s0)
+	...
+20000020:	0090                	addi	a2,sp,64
+20000022:	2000                	fld	fs0,0(s0)
+20000024:	0090                	addi	a2,sp,64
+20000026:	2000                	fld	fs0,0(s0)
+	...
+20000030:	0090                	addi	a2,sp,64
+20000032:	2000                	fld	fs0,0(s0)
+20000034:	0000                	unimp
+20000036:	0000                	unimp
+20000038:	0090                	addi	a2,sp,64
+2000003a:	2000                	fld	fs0,0(s0)
+2000003c:	0000                	unimp
+2000003e:	0000                	unimp
+20000040:	0090                	addi	a2,sp,64
+20000042:	2000                	fld	fs0,0(s0)
+20000044:	0090                	addi	a2,sp,64
+20000046:	2000                	fld	fs0,0(s0)
+20000048:	0090                	addi	a2,sp,64
+2000004a:	2000                	fld	fs0,0(s0)
+2000004c:	0090                	addi	a2,sp,64
+2000004e:	2000                	fld	fs0,0(s0)
+20000050:	0090                	addi	a2,sp,64
+20000052:	2000                	fld	fs0,0(s0)
+20000054:	0090                	addi	a2,sp,64
+20000056:	2000                	fld	fs0,0(s0)
+20000058:	0090                	addi	a2,sp,64
+2000005a:	2000                	fld	fs0,0(s0)
+2000005c:	0000                	unimp
+2000005e:	0000                	unimp
+20000060:	0090                	addi	a2,sp,64
+20000062:	2000                	fld	fs0,0(s0)
+20000064:	0090                	addi	a2,sp,64
+20000066:	2000                	fld	fs0,0(s0)
+20000068:	0090                	addi	a2,sp,64
+2000006a:	2000                	fld	fs0,0(s0)
+2000006c:	0090                	addi	a2,sp,64
+2000006e:	2000                	fld	fs0,0(s0)
+20000070:	0090                	addi	a2,sp,64
+20000072:	2000                	fld	fs0,0(s0)
+20000074:	0090                	addi	a2,sp,64
+20000076:	2000                	fld	fs0,0(s0)
+20000078:	0090                	addi	a2,sp,64
+2000007a:	2000                	fld	fs0,0(s0)
+2000007c:	0090                	addi	a2,sp,64
+2000007e:	2000                	fld	fs0,0(s0)
+20000080:	0090                	addi	a2,sp,64
+20000082:	2000                	fld	fs0,0(s0)
+20000084:	0090                	addi	a2,sp,64
+20000086:	2000                	fld	fs0,0(s0)
+20000088:	0090                	addi	a2,sp,64
+2000008a:	2000                	fld	fs0,0(s0)
+2000008c:	0090                	addi	a2,sp,64
+2000008e:	2000                	fld	fs0,0(s0)
+
+20000090 <ADC_IRQHandler>:
+GPIOB_IRQHandler():
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:119
+TMR3_IRQHandler:
+UART2_IRQHandler:
+UART3_IRQHandler:
+WDOG_BAT_IRQHandler: 
+1:  
+	j 1b
+20000090:	a001                	j	20000090 <ADC_IRQHandler>
+
+20000092 <SetSysClock>:
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:26
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void SetSysClock(SYS_CLKTypeDef sc)
+{
+20000092:	1101                	addi	sp,sp,-32
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+ */
+__attribute__((always_inline)) RV_STATIC_INLINE uint32_t __risc_v_disable_irq(void)
+{
+  uint32_t result;
+
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+20000094:	08800713          	li	a4,136
+20000098:	800737f3          	csrrc	a5,0x800,a4
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+          "=r"(result): "r"(0x88) : "memory");
+  return result & 0x88;
+2000009c:	0887f793          	andi	a5,a5,136
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:27
+    sys_safe_access_enable();
+200000a0:	c23e                	sw	a5,4(sp)
+200000a2:	0001                	nop
+200000a4:	0001                	nop
+200000a6:	400017b7          	lui	a5,0x40001
+200000aa:	05700593          	li	a1,87
+200000ae:	04b78023          	sb	a1,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+200000b2:	fa800613          	li	a2,-88
+200000b6:	04c78023          	sb	a2,64(a5)
+200000ba:	0001                	nop
+200000bc:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:28
+    R8_PLL_CONFIG &= ~(1 << 5); //
+200000be:	04b7c683          	lbu	a3,75(a5)
+200000c2:	0df6f693          	andi	a3,a3,223
+200000c6:	04d785a3          	sb	a3,75(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:29
+    sys_safe_access_disable();
+200000ca:	04078023          	sb	zero,64(a5)
+200000ce:	4692                	lw	a3,4(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+200000d0:	8006a6f3          	csrrs	a3,0x800,a3
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:29
+200000d4:	0001                	nop
+200000d6:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:30
+    if(sc & 0x20)  // HSE div
+200000d8:	02057693          	andi	a3,a0,32
+200000dc:	ced5                	beqz	a3,20000198 <SetSysClock+0x106>
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+200000de:	800736f3          	csrrc	a3,0x800,a4
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+200000e2:	0886f693          	andi	a3,a3,136
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:32
+    {
+        sys_safe_access_enable();
+200000e6:	c436                	sw	a3,8(sp)
+200000e8:	0001                	nop
+200000ea:	0001                	nop
+200000ec:	04b78023          	sb	a1,64(a5)
+200000f0:	04c78023          	sb	a2,64(a5)
+200000f4:	0001                	nop
+200000f6:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:33
+        R32_CLK_SYS_CFG = (0 << 6) | (sc & 0x1f) | RB_TX_32M_PWR_EN | RB_PLL_PWR_EN;
+200000f8:	001406b7          	lui	a3,0x140
+200000fc:	897d                	andi	a0,a0,31
+200000fe:	8d55                	or	a0,a0,a3
+20000100:	c788                	sw	a0,8(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:34
+        __nop();
+20000102:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:35
+        __nop();
+20000104:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:36
+        __nop();
+20000106:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:37
+        __nop();
+20000108:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:38
+        sys_safe_access_disable();
+2000010a:	04078023          	sb	zero,64(a5)
+2000010e:	46a2                	lw	a3,8(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+20000110:	8006a6f3          	csrrs	a3,0x800,a3
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:38
+20000114:	0001                	nop
+20000116:	0001                	nop
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+20000118:	80073773          	csrrc	a4,0x800,a4
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+2000011c:	08877713          	andi	a4,a4,136
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:39
+        sys_safe_access_enable();
+20000120:	c63a                	sw	a4,12(sp)
+20000122:	0001                	nop
+20000124:	0001                	nop
+20000126:	04b78023          	sb	a1,64(a5)
+2000012a:	04c78023          	sb	a2,64(a5)
+2000012e:	0001                	nop
+20000130:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:40
+        SAFEOPERATE;
+20000132:	0001                	nop
+20000134:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:41
+        R8_FLASH_CFG = 0X51;
+20000136:	40002737          	lui	a4,0x40002
+2000013a:	05100693          	li	a3,81
+2000013e:	80d703a3          	sb	a3,-2041(a4) # 40001807 <_eusrstack+0x1fffb007>
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:42
+        sys_safe_access_disable();
+20000142:	04078023          	sb	zero,64(a5)
+20000146:	47b2                	lw	a5,12(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+20000148:	8007a7f3          	csrrs	a5,0x800,a5
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:62
+    }
+    else
+    {
+        sys_safe_access_enable();
+        R32_CLK_SYS_CFG |= RB_CLK_SYS_MOD;
+        sys_safe_access_disable();
+2000014c:	0001                	nop
+2000014e:	0001                	nop
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+20000150:	08800793          	li	a5,136
+20000154:	8007b7f3          	csrrc	a5,0x800,a5
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+20000158:	0887f793          	andi	a5,a5,136
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:65
+    }
+    //更改FLASH clk的驱动能力
+    sys_safe_access_enable();
+2000015c:	ce3e                	sw	a5,28(sp)
+2000015e:	0001                	nop
+20000160:	0001                	nop
+20000162:	400017b7          	lui	a5,0x40001
+20000166:	05700713          	li	a4,87
+2000016a:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+2000016e:	fa800713          	li	a4,-88
+20000172:	04e78023          	sb	a4,64(a5)
+20000176:	0001                	nop
+20000178:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:66
+    R8_PLL_CONFIG |= 1 << 7;
+2000017a:	04b7c703          	lbu	a4,75(a5)
+2000017e:	08076713          	ori	a4,a4,128
+20000182:	04e785a3          	sb	a4,75(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:67
+    sys_safe_access_disable();
+20000186:	04078023          	sb	zero,64(a5)
+2000018a:	47f2                	lw	a5,28(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+2000018c:	8007a7f3          	csrrs	a5,0x800,a5
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:67
+20000190:	0001                	nop
+20000192:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:68
+}
+20000194:	6105                	addi	sp,sp,32
+20000196:	8082                	ret
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:45
+    else if(sc & 0x40) // PLL div
+20000198:	04057693          	andi	a3,a0,64
+2000019c:	c6bd                	beqz	a3,2000020a <SetSysClock+0x178>
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+2000019e:	800736f3          	csrrc	a3,0x800,a4
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+200001a2:	0886f693          	andi	a3,a3,136
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:47
+        sys_safe_access_enable();
+200001a6:	c836                	sw	a3,16(sp)
+200001a8:	0001                	nop
+200001aa:	0001                	nop
+200001ac:	04b78023          	sb	a1,64(a5)
+200001b0:	04c78023          	sb	a2,64(a5)
+200001b4:	0001                	nop
+200001b6:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:48
+        R32_CLK_SYS_CFG = (1 << 6) | (sc & 0x1f) | RB_TX_32M_PWR_EN | RB_PLL_PWR_EN;
+200001b8:	001406b7          	lui	a3,0x140
+200001bc:	04068693          	addi	a3,a3,64 # 140040 <_data_lma+0x13f04c>
+200001c0:	897d                	andi	a0,a0,31
+200001c2:	8d55                	or	a0,a0,a3
+200001c4:	c788                	sw	a0,8(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:49
+        __nop();
+200001c6:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:50
+        __nop();
+200001c8:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:51
+        __nop();
+200001ca:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:52
+        __nop();
+200001cc:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:53
+        sys_safe_access_disable();
+200001ce:	04078023          	sb	zero,64(a5)
+200001d2:	46c2                	lw	a3,16(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+200001d4:	8006a6f3          	csrrs	a3,0x800,a3
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:53
+200001d8:	0001                	nop
+200001da:	0001                	nop
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+200001dc:	80073773          	csrrc	a4,0x800,a4
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+200001e0:	08877713          	andi	a4,a4,136
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:54
+        sys_safe_access_enable();
+200001e4:	ca3a                	sw	a4,20(sp)
+200001e6:	0001                	nop
+200001e8:	0001                	nop
+200001ea:	04b78023          	sb	a1,64(a5)
+200001ee:	04c78023          	sb	a2,64(a5)
+200001f2:	0001                	nop
+200001f4:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:55
+        R8_FLASH_CFG = 0X52;
+200001f6:	40002737          	lui	a4,0x40002
+200001fa:	05200693          	li	a3,82
+200001fe:	80d703a3          	sb	a3,-2041(a4) # 40001807 <_eusrstack+0x1fffb007>
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:56
+        sys_safe_access_disable();
+20000202:	04078023          	sb	zero,64(a5)
+20000206:	47d2                	lw	a5,20(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+20000208:	b781                	j	20000148 <SetSysClock+0xb6>
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+2000020a:	80073773          	csrrc	a4,0x800,a4
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+2000020e:	08877713          	andi	a4,a4,136
+SetSysClock():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:60
+        sys_safe_access_enable();
+20000212:	cc3a                	sw	a4,24(sp)
+20000214:	0001                	nop
+20000216:	0001                	nop
+20000218:	04b78023          	sb	a1,64(a5)
+2000021c:	04c78023          	sb	a2,64(a5)
+20000220:	0001                	nop
+20000222:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:61
+        R32_CLK_SYS_CFG |= RB_CLK_SYS_MOD;
+20000224:	4798                	lw	a4,8(a5)
+20000226:	0c076713          	ori	a4,a4,192
+2000022a:	c798                	sw	a4,8(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:62
+        sys_safe_access_disable();
+2000022c:	04078023          	sb	zero,64(a5)
+20000230:	47e2                	lw	a5,24(sp)
+20000232:	bf19                	j	20000148 <SetSysClock+0xb6>
+
+20000234 <SYS_ResetExecute>:
+SYS_ResetExecute():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:130
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void SYS_ResetExecute(void)
+{
+20000234:	1101                	addi	sp,sp,-32
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:131
+    FLASH_ROM_SW_RESET();
+20000236:	4681                	li	a3,0
+20000238:	4601                	li	a2,0
+2000023a:	4581                	li	a1,0
+2000023c:	4511                	li	a0,4
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:130
+{
+2000023e:	ce06                	sw	ra,28(sp)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:131
+    FLASH_ROM_SW_RESET();
+20000240:	2a7d                	jal	200003fe <FLASH_EEPROM_CMD>
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+20000242:	08800793          	li	a5,136
+20000246:	8007b7f3          	csrrc	a5,0x800,a5
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+2000024a:	0887f793          	andi	a5,a5,136
+SYS_ResetExecute():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:132
+    sys_safe_access_enable();
+2000024e:	c63e                	sw	a5,12(sp)
+20000250:	0001                	nop
+20000252:	0001                	nop
+20000254:	400017b7          	lui	a5,0x40001
+20000258:	05700713          	li	a4,87
+2000025c:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+20000260:	fa800713          	li	a4,-88
+20000264:	04e78023          	sb	a4,64(a5)
+20000268:	0001                	nop
+2000026a:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:133
+    R8_RST_WDOG_CTRL |= RB_SOFTWARE_RESET;
+2000026c:	0467c703          	lbu	a4,70(a5)
+20000270:	00176713          	ori	a4,a4,1
+20000274:	04e78323          	sb	a4,70(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:134
+    sys_safe_access_disable();
+20000278:	04078023          	sb	zero,64(a5)
+2000027c:	47b2                	lw	a5,12(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+2000027e:	8007a7f3          	csrrs	a5,0x800,a5
+SYS_ResetExecute():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:134
+20000282:	0001                	nop
+20000284:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:135
+}
+20000286:	40f2                	lw	ra,28(sp)
+20000288:	6105                	addi	sp,sp,32
+2000028a:	8082                	ret
+
+2000028c <HardFault_Handler>:
+HardFault_Handler():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:268
+ */
+__INTERRUPT
+__HIGH_CODE
+__attribute__((weak))
+void HardFault_Handler(void)
+{
+2000028c:	1141                	addi	sp,sp,-16
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:269
+    FLASH_ROM_SW_RESET();
+2000028e:	4681                	li	a3,0
+20000290:	4601                	li	a2,0
+20000292:	4581                	li	a1,0
+20000294:	4511                	li	a0,4
+20000296:	22a5                	jal	200003fe <FLASH_EEPROM_CMD>
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+20000298:	08800713          	li	a4,136
+2000029c:	800737f3          	csrrc	a5,0x800,a4
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+200002a0:	0887f793          	andi	a5,a5,136
+HardFault_Handler():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:270
+    sys_safe_access_enable();
+200002a4:	c43e                	sw	a5,8(sp)
+200002a6:	0001                	nop
+200002a8:	0001                	nop
+200002aa:	400017b7          	lui	a5,0x40001
+200002ae:	05700613          	li	a2,87
+200002b2:	04c78023          	sb	a2,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+200002b6:	fa800693          	li	a3,-88
+200002ba:	04d78023          	sb	a3,64(a5)
+200002be:	0001                	nop
+200002c0:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:271
+    R16_INT32K_TUNE = 0xFFFF;
+200002c2:	55fd                	li	a1,-1
+200002c4:	02b79623          	sh	a1,44(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:272
+    sys_safe_access_disable();
+200002c8:	04078023          	sb	zero,64(a5)
+200002cc:	45a2                	lw	a1,8(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+200002ce:	8005a5f3          	csrrs	a1,0x800,a1
+HardFault_Handler():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:272
+200002d2:	0001                	nop
+200002d4:	0001                	nop
+__risc_v_disable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:130
+  __asm volatile ("csrrc %0, 0x800, %1" : \
+200002d6:	80073773          	csrrc	a4,0x800,a4
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:132
+  return result & 0x88;
+200002da:	08877713          	andi	a4,a4,136
+HardFault_Handler():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:273
+    sys_safe_access_enable();
+200002de:	c63a                	sw	a4,12(sp)
+200002e0:	0001                	nop
+200002e2:	0001                	nop
+200002e4:	04c78023          	sb	a2,64(a5)
+200002e8:	04d78023          	sb	a3,64(a5)
+200002ec:	0001                	nop
+200002ee:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:274
+    R8_RST_WDOG_CTRL |= RB_SOFTWARE_RESET;
+200002f0:	0467c703          	lbu	a4,70(a5)
+200002f4:	00176713          	ori	a4,a4,1
+200002f8:	04e78323          	sb	a4,70(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:275
+    sys_safe_access_disable();
+200002fc:	04078023          	sb	zero,64(a5)
+20000300:	47b2                	lw	a5,12(sp)
+__risc_v_enable_irq():
+D:\CH592\EVT\EXAM\SRC\RVMSIS/core_riscv.h:114
+  __asm volatile ("csrrs %0, 0x800, %1" : \
+20000302:	8007a7f3          	csrrs	a5,0x800,a5
+HardFault_Handler():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:275
+20000306:	0001                	nop
+20000308:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:276 (discriminator 1)
+    while(1);
+2000030a:	a001                	j	2000030a <HardFault_Handler+0x7e>
+
+2000030c <mDelayuS>:
+mDelayuS():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:295
+{
+    uint32_t i;
+#if(FREQ_SYS == 80000000)
+    i = t * 20;
+#elif(FREQ_SYS == 60000000)
+    i = t * 15;
+2000030c:	47bd                	li	a5,15
+2000030e:	02f50533          	mul	a0,a0,a5
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:319 (discriminator 1)
+#else
+    i = t << 1;
+#endif
+    do
+    {
+        __nop();
+20000312:	0001                	nop
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:320 (discriminator 1)
+    } while(--i);
+20000314:	157d                	addi	a0,a0,-1
+20000316:	fd75                	bnez	a0,20000312 <mDelayuS+0x6>
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:321
+}
+20000318:	8082                	ret
+
+2000031a <mDelaymS>:
+mDelaymS():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:334
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void mDelaymS(uint16_t t)
+{
+2000031a:	1141                	addi	sp,sp,-16
+2000031c:	c422                	sw	s0,8(sp)
+2000031e:	c226                	sw	s1,4(sp)
+20000320:	c606                	sw	ra,12(sp)
+20000322:	84aa                	mv	s1,a0
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:337
+    uint16_t i;
+
+    for(i = 0; i < t; i++)
+20000324:	4401                	li	s0,0
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:337 (discriminator 1)
+20000326:	00941763          	bne	s0,s1,20000334 <mDelaymS+0x1a>
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:341
+    {
+        mDelayuS(1000);
+    }
+}
+2000032a:	40b2                	lw	ra,12(sp)
+2000032c:	4422                	lw	s0,8(sp)
+2000032e:	4492                	lw	s1,4(sp)
+20000330:	0141                	addi	sp,sp,16
+20000332:	8082                	ret
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:337 (discriminator 3)
+    for(i = 0; i < t; i++)
+20000334:	0405                	addi	s0,s0,1
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:339 (discriminator 3)
+        mDelayuS(1000);
+20000336:	3e800513          	li	a0,1000
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:337 (discriminator 3)
+    for(i = 0; i < t; i++)
+2000033a:	0442                	slli	s0,s0,0x10
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:339 (discriminator 3)
+        mDelayuS(1000);
+2000033c:	3fc1                	jal	2000030c <mDelayuS>
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_sys.c:337 (discriminator 3)
+    for(i = 0; i < t; i++)
+2000033e:	8041                	srli	s0,s0,0x10
+20000340:	b7dd                	j	20000326 <mDelaymS+0xc>
+
+20000342 <FLASH_ROM_BEG>:
+FLASH_ROM_BEG():
+20000342:	80040323          	sb	zero,-2042(s0)
+20000346:	4715                	li	a4,5
+20000348:	80e40323          	sb	a4,-2042(s0)
+2000034c:	0001                	nop
+2000034e:	80a40223          	sb	a0,-2044(s0)
+20000352:	8082                	ret
+
+20000354 <FLASH_ROM_END>:
+FLASH_ROM_END():
+20000354:	80640783          	lb	a5,-2042(s0)
+20000358:	fe07cee3          	bltz	a5,20000354 <FLASH_ROM_END>
+2000035c:	80040323          	sb	zero,-2042(s0)
+20000360:	8082                	ret
+
+20000362 <FLASH_ROM_IN>:
+FLASH_ROM_IN():
+20000362:	80640783          	lb	a5,-2042(s0)
+20000366:	fe07cee3          	bltz	a5,20000362 <FLASH_ROM_IN>
+2000036a:	80444503          	lbu	a0,-2044(s0)
+2000036e:	8082                	ret
+
+20000370 <FLASH_ROM_OUT>:
+FLASH_ROM_OUT():
+20000370:	80640783          	lb	a5,-2042(s0)
+20000374:	fe07cee3          	bltz	a5,20000370 <FLASH_ROM_OUT>
+20000378:	80a40223          	sb	a0,-2044(s0)
+2000037c:	8082                	ret
+
+2000037e <FLASH_ROM_ADDR>:
+FLASH_ROM_ADDR():
+2000037e:	1141                	addi	sp,sp,-16
+20000380:	c426                	sw	s1,8(sp)
+20000382:	c24a                	sw	s2,4(sp)
+20000384:	c04e                	sw	s3,0(sp)
+20000386:	c606                	sw	ra,12(sp)
+20000388:	0bf57713          	andi	a4,a0,191
+2000038c:	47ad                	li	a5,11
+2000038e:	89aa                	mv	s3,a0
+20000390:	892e                	mv	s2,a1
+20000392:	4495                	li	s1,5
+20000394:	00f70663          	beq	a4,a5,200003a0 <FLASH_ROM_ADDR+0x22>
+20000398:	4519                	li	a0,6
+2000039a:	3765                	jal	20000342 <FLASH_ROM_BEG>
+2000039c:	3f65                	jal	20000354 <FLASH_ROM_END>
+2000039e:	448d                	li	s1,3
+200003a0:	854e                	mv	a0,s3
+200003a2:	3745                	jal	20000342 <FLASH_ROM_BEG>
+200003a4:	59fd                	li	s3,-1
+200003a6:	14fd                	addi	s1,s1,-1
+200003a8:	01349863          	bne	s1,s3,200003b8 <FLASH_ROM_ADDR+0x3a>
+200003ac:	40b2                	lw	ra,12(sp)
+200003ae:	44a2                	lw	s1,8(sp)
+200003b0:	4912                	lw	s2,4(sp)
+200003b2:	4982                	lw	s3,0(sp)
+200003b4:	0141                	addi	sp,sp,16
+200003b6:	8082                	ret
+200003b8:	01095513          	srli	a0,s2,0x10
+200003bc:	0ff57513          	andi	a0,a0,255
+200003c0:	3f45                	jal	20000370 <FLASH_ROM_OUT>
+200003c2:	0922                	slli	s2,s2,0x8
+200003c4:	b7cd                	j	200003a6 <FLASH_ROM_ADDR+0x28>
+
+200003c6 <FLASH_ROM_WAIT>:
+FLASH_ROM_WAIT():
+200003c6:	1101                	addi	sp,sp,-32
+200003c8:	cc26                	sw	s1,24(sp)
+200003ca:	ce06                	sw	ra,28(sp)
+200003cc:	000804b7          	lui	s1,0x80
+200003d0:	3751                	jal	20000354 <FLASH_ROM_END>
+200003d2:	4515                	li	a0,5
+200003d4:	37bd                	jal	20000342 <FLASH_ROM_BEG>
+200003d6:	3771                	jal	20000362 <FLASH_ROM_IN>
+200003d8:	3769                	jal	20000362 <FLASH_ROM_IN>
+200003da:	c62a                	sw	a0,12(sp)
+200003dc:	3fa5                	jal	20000354 <FLASH_ROM_END>
+200003de:	4532                	lw	a0,12(sp)
+200003e0:	00157793          	andi	a5,a0,1
+200003e4:	eb89                	bnez	a5,200003f6 <FLASH_ROM_WAIT+0x30>
+200003e6:	00156513          	ori	a0,a0,1
+200003ea:	0ff57513          	andi	a0,a0,255
+200003ee:	40f2                	lw	ra,28(sp)
+200003f0:	44e2                	lw	s1,24(sp)
+200003f2:	6105                	addi	sp,sp,32
+200003f4:	8082                	ret
+200003f6:	14fd                	addi	s1,s1,-1
+200003f8:	fce9                	bnez	s1,200003d2 <FLASH_ROM_WAIT+0xc>
+200003fa:	4501                	li	a0,0
+200003fc:	bfcd                	j	200003ee <FLASH_ROM_WAIT+0x28>
+
+200003fe <FLASH_EEPROM_CMD>:
+FLASH_EEPROM_CMD():
+200003fe:	7139                	addi	sp,sp,-64
+20000400:	dc26                	sw	s1,56(sp)
+20000402:	da4a                	sw	s2,52(sp)
+20000404:	d84e                	sw	s3,48(sp)
+20000406:	d652                	sw	s4,44(sp)
+20000408:	d456                	sw	s5,40(sp)
+2000040a:	d25a                	sw	s6,36(sp)
+2000040c:	d05e                	sw	s7,32(sp)
+2000040e:	de06                	sw	ra,60(sp)
+20000410:	ce62                	sw	s8,28(sp)
+20000412:	cc66                	sw	s9,24(sp)
+20000414:	e000e7b7          	lui	a5,0xe000e
+20000418:	577d                	li	a4,-1
+2000041a:	0007aa83          	lw	s5,0(a5) # e000e000 <_eusrstack+0xc0007800>
+2000041e:	c622                	sw	s0,12(sp)
+20000420:	0047aa03          	lw	s4,4(a5)
+20000424:	18e7a023          	sw	a4,384(a5)
+20000428:	18e7a223          	sw	a4,388(a5)
+2000042c:	400017b7          	lui	a5,0x40001
+20000430:	05700713          	li	a4,87
+20000434:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+20000438:	fa800713          	li	a4,-88
+2000043c:	04e78023          	sb	a4,64(a5)
+20000440:	0447c783          	lbu	a5,68(a5)
+20000444:	ff750b93          	addi	s7,a0,-9
+20000448:	84b6                	mv	s1,a3
+2000044a:	07e2                	slli	a5,a5,0x18
+2000044c:	0ffbfb93          	andi	s7,s7,255
+20000450:	4685                	li	a3,1
+20000452:	89aa                	mv	s3,a0
+20000454:	8b2e                	mv	s6,a1
+20000456:	8932                	mv	s2,a2
+20000458:	40002437          	lui	s0,0x40002
+2000045c:	87e1                	srai	a5,a5,0x18
+2000045e:	5701                	li	a4,-32
+20000460:	0176fa63          	bgeu	a3,s7,20000474 <FLASH_EEPROM_CMD+0x76>
+20000464:	00d50863          	beq	a0,a3,20000474 <FLASH_EEPROM_CMD+0x76>
+20000468:	4689                	li	a3,2
+2000046a:	02000713          	li	a4,32
+2000046e:	00d51363          	bne	a0,a3,20000474 <FLASH_EEPROM_CMD+0x76>
+20000472:	5701                	li	a4,-32
+20000474:	8fd9                	or	a5,a5,a4
+20000476:	0ff7f793          	andi	a5,a5,255
+2000047a:	40001cb7          	lui	s9,0x40001
+2000047e:	04fc8223          	sb	a5,68(s9) # 40001044 <_eusrstack+0x1fffa844>
+20000482:	4711                	li	a4,4
+20000484:	80e40323          	sb	a4,-2042(s0) # 40001806 <_eusrstack+0x1fffb006>
+20000488:	0ff00513          	li	a0,255
+2000048c:	3d5d                	jal	20000342 <FLASH_ROM_BEG>
+2000048e:	4c09                	li	s8,2
+20000490:	35d1                	jal	20000354 <FLASH_ROM_END>
+20000492:	117c6d63          	bltu	s8,s7,200005ac <FLASH_EEPROM_CMD+0x1ae>
+20000496:	000705b7          	lui	a1,0x70
+2000049a:	95da                	add	a1,a1,s6
+2000049c:	00078737          	lui	a4,0x78
+200004a0:	5579                	li	a0,-2
+200004a2:	04e5f263          	bgeu	a1,a4,200004e6 <FLASH_EEPROM_CMD+0xe8>
+200004a6:	009587b3          	add	a5,a1,s1
+200004aa:	02f76e63          	bltu	a4,a5,200004e6 <FLASH_EEPROM_CMD+0xe8>
+200004ae:	00080b37          	lui	s6,0x80
+200004b2:	47a9                	li	a5,10
+200004b4:	0165eb33          	or	s6,a1,s6
+200004b8:	06f99963          	bne	s3,a5,2000052a <FLASH_EEPROM_CMD+0x12c>
+200004bc:	e489                	bnez	s1,200004c6 <FLASH_EEPROM_CMD+0xc8>
+200004be:	4481                	li	s1,0
+200004c0:	3d51                	jal	20000354 <FLASH_ROM_END>
+200004c2:	8526                	mv	a0,s1
+200004c4:	a00d                	j	200004e6 <FLASH_EEPROM_CMD+0xe8>
+200004c6:	85da                	mv	a1,s6
+200004c8:	4509                	li	a0,2
+200004ca:	3d55                	jal	2000037e <FLASH_ROM_ADDR>
+200004cc:	0905                	addi	s2,s2,1
+200004ce:	fff94503          	lbu	a0,-1(s2)
+200004d2:	14fd                	addi	s1,s1,-1
+200004d4:	0b05                	addi	s6,s6,1
+200004d6:	3d69                	jal	20000370 <FLASH_ROM_OUT>
+200004d8:	c481                	beqz	s1,200004e0 <FLASH_EEPROM_CMD+0xe2>
+200004da:	0ffb7793          	andi	a5,s6,255
+200004de:	f7fd                	bnez	a5,200004cc <FLASH_EEPROM_CMD+0xce>
+200004e0:	35dd                	jal	200003c6 <FLASH_ROM_WAIT>
+200004e2:	fd69                	bnez	a0,200004bc <FLASH_EEPROM_CMD+0xbe>
+200004e4:	557d                	li	a0,-1
+200004e6:	400017b7          	lui	a5,0x40001
+200004ea:	05700713          	li	a4,87
+200004ee:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+200004f2:	fa800713          	li	a4,-88
+200004f6:	04e78023          	sb	a4,64(a5)
+200004fa:	0447c703          	lbu	a4,68(a5)
+200004fe:	8b41                	andi	a4,a4,16
+20000500:	04e78223          	sb	a4,68(a5)
+20000504:	50f2                	lw	ra,60(sp)
+20000506:	e000e7b7          	lui	a5,0xe000e
+2000050a:	1157a023          	sw	s5,256(a5) # e000e100 <_eusrstack+0xc0007900>
+2000050e:	1147a223          	sw	s4,260(a5)
+20000512:	54e2                	lw	s1,56(sp)
+20000514:	4432                	lw	s0,12(sp)
+20000516:	5952                	lw	s2,52(sp)
+20000518:	59c2                	lw	s3,48(sp)
+2000051a:	5a32                	lw	s4,44(sp)
+2000051c:	5aa2                	lw	s5,40(sp)
+2000051e:	5b12                	lw	s6,36(sp)
+20000520:	5b82                	lw	s7,32(sp)
+20000522:	4c72                	lw	s8,28(sp)
+20000524:	4ce2                	lw	s9,24(sp)
+20000526:	6121                	addi	sp,sp,64
+20000528:	8082                	ret
+2000052a:	47a5                	li	a5,9
+2000052c:	06f99563          	bne	s3,a5,20000596 <FLASH_EEPROM_CMD+0x198>
+20000530:	6985                	lui	s3,0x1
+20000532:	0ff00913          	li	s2,255
+20000536:	009906b3          	add	a3,s2,s1
+2000053a:	012b74b3          	and	s1,s6,s2
+2000053e:	94b6                	add	s1,s1,a3
+20000540:	fff94913          	not	s2,s2
+20000544:	009974b3          	and	s1,s2,s1
+20000548:	6b85                	lui	s7,0x1
+2000054a:	01697933          	and	s2,s2,s6
+2000054e:	6b41                	lui	s6,0x10
+20000550:	fff98793          	addi	a5,s3,-1 # fff <_data_lma+0xb>
+20000554:	0127f7b3          	and	a5,a5,s2
+20000558:	e399                	bnez	a5,2000055e <FLASH_EEPROM_CMD+0x160>
+2000055a:	0134fc63          	bgeu	s1,s3,20000572 <FLASH_EEPROM_CMD+0x174>
+2000055e:	0049d993          	srli	s3,s3,0x4
+20000562:	47c1                	li	a5,16
+20000564:	ff37e6e3          	bltu	a5,s3,20000550 <FLASH_EEPROM_CMD+0x152>
+20000568:	bf99                	j	200004be <FLASH_EEPROM_CMD+0xc0>
+2000056a:	6905                	lui	s2,0x1
+2000056c:	69c1                	lui	s3,0x10
+2000056e:	197d                	addi	s2,s2,-1
+20000570:	b7d9                	j	20000536 <FLASH_EEPROM_CMD+0x138>
+20000572:	0d800513          	li	a0,216
+20000576:	01698863          	beq	s3,s6,20000586 <FLASH_EEPROM_CMD+0x188>
+2000057a:	02000513          	li	a0,32
+2000057e:	01798463          	beq	s3,s7,20000586 <FLASH_EEPROM_CMD+0x188>
+20000582:	08100513          	li	a0,129
+20000586:	85ca                	mv	a1,s2
+20000588:	3bdd                	jal	2000037e <FLASH_ROM_ADDR>
+2000058a:	3d35                	jal	200003c6 <FLASH_ROM_WAIT>
+2000058c:	dd21                	beqz	a0,200004e4 <FLASH_EEPROM_CMD+0xe6>
+2000058e:	994e                	add	s2,s2,s3
+20000590:	413484b3          	sub	s1,s1,s3
+20000594:	b7d9                	j	2000055a <FLASH_EEPROM_CMD+0x15c>
+20000596:	85da                	mv	a1,s6
+20000598:	452d                	li	a0,11
+2000059a:	33d5                	jal	2000037e <FLASH_ROM_ADDR>
+2000059c:	94ca                	add	s1,s1,s2
+2000059e:	f29900e3          	beq	s2,s1,200004be <FLASH_EEPROM_CMD+0xc0>
+200005a2:	0905                	addi	s2,s2,1
+200005a4:	3b7d                	jal	20000362 <FLASH_ROM_IN>
+200005a6:	fea90fa3          	sb	a0,-1(s2) # fff <_data_lma+0xb>
+200005aa:	bfd5                	j	2000059e <FLASH_EEPROM_CMD+0x1a0>
+200005ac:	fff98793          	addi	a5,s3,-1 # ffff <_data_lma+0xf00b>
+200005b0:	0ff7f793          	andi	a5,a5,255
+200005b4:	0cfc6163          	bltu	s8,a5,20000676 <.loop402+0x7a>
+200005b8:	041cc783          	lbu	a5,65(s9)
+200005bc:	08300713          	li	a4,131
+200005c0:	04f71f63          	bne	a4,a5,2000061e <.loop402+0x22>
+200005c4:	00080737          	lui	a4,0x80
+200005c8:	04eb6b63          	bltu	s6,a4,2000061e <.loop402+0x22>
+200005cc:	009b07b3          	add	a5,s6,s1
+200005d0:	001006b7          	lui	a3,0x100
+200005d4:	04d7f563          	bgeu	a5,a3,2000061e <.loop402+0x22>
+200005d8:	00eb4b33          	xor	s6,s6,a4
+200005dc:	4789                	li	a5,2
+200005de:	06f99363          	bne	s3,a5,20000644 <.loop402+0x48>
+200005e2:	8089                	srli	s1,s1,0x2
+200005e4:	49d5                	li	s3,21
+200005e6:	ec048ce3          	beqz	s1,200004be <FLASH_EEPROM_CMD+0xc0>
+200005ea:	85da                	mv	a1,s6
+200005ec:	4509                	li	a0,2
+200005ee:	3b41                	jal	2000037e <FLASH_ROM_ADDR>
+200005f0:	0911                	addi	s2,s2,4
+200005f2:	ffc92703          	lw	a4,-4(s2)
+200005f6:	4791                	li	a5,4
+200005f8:	80e42023          	sw	a4,-2048(s0)
+
+200005fc <.loop402>:
+200005fc:	80640703          	lb	a4,-2042(s0)
+20000600:	fe074ee3          	bltz	a4,200005fc <.loop402>
+20000604:	81340323          	sb	s3,-2042(s0)
+20000608:	17fd                	addi	a5,a5,-1
+2000060a:	fbed                	bnez	a5,200005fc <.loop402>
+2000060c:	14fd                	addi	s1,s1,-1
+2000060e:	0b11                	addi	s6,s6,4
+20000610:	c481                	beqz	s1,20000618 <.loop402+0x1c>
+20000612:	0ffb7793          	andi	a5,s6,255
+20000616:	ffe9                	bnez	a5,200005f0 <FLASH_EEPROM_CMD+0x1f2>
+20000618:	337d                	jal	200003c6 <FLASH_ROM_WAIT>
+2000061a:	f571                	bnez	a0,200005e6 <FLASH_EEPROM_CMD+0x1e8>
+2000061c:	b5e1                	j	200004e4 <FLASH_EEPROM_CMD+0xe6>
+2000061e:	400017b7          	lui	a5,0x40001
+20000622:	0457c703          	lbu	a4,69(a5) # 40001045 <_eusrstack+0x1fffa845>
+20000626:	000807b7          	lui	a5,0x80
+2000062a:	02077713          	andi	a4,a4,32
+2000062e:	e319                	bnez	a4,20000634 <.loop402+0x38>
+20000630:	000787b7          	lui	a5,0x78
+20000634:	5579                	li	a0,-2
+20000636:	eafb78e3          	bgeu	s6,a5,200004e6 <FLASH_EEPROM_CMD+0xe8>
+2000063a:	009b0733          	add	a4,s6,s1
+2000063e:	f8e7ffe3          	bgeu	a5,a4,200005dc <FLASH_EEPROM_CMD+0x1de>
+20000642:	b555                	j	200004e6 <FLASH_EEPROM_CMD+0xe8>
+20000644:	4785                	li	a5,1
+20000646:	f2f982e3          	beq	s3,a5,2000056a <FLASH_EEPROM_CMD+0x16c>
+2000064a:	85da                	mv	a1,s6
+2000064c:	452d                	li	a0,11
+2000064e:	3b05                	jal	2000037e <FLASH_ROM_ADDR>
+20000650:	fff48993          	addi	s3,s1,-1 # 7ffff <_data_lma+0x7f00b>
+20000654:	e60485e3          	beqz	s1,200004be <FLASH_EEPROM_CMD+0xc0>
+20000658:	3329                	jal	20000362 <FLASH_ROM_IN>
+2000065a:	0039f793          	andi	a5,s3,3
+2000065e:	eb91                	bnez	a5,20000672 <.loop402+0x76>
+20000660:	80042683          	lw	a3,-2048(s0)
+20000664:	00092703          	lw	a4,0(s2)
+20000668:	00490793          	addi	a5,s2,4
+2000066c:	e4e69ae3          	bne	a3,a4,200004c0 <FLASH_EEPROM_CMD+0xc2>
+20000670:	893e                	mv	s2,a5
+20000672:	84ce                	mv	s1,s3
+20000674:	bff1                	j	20000650 <.loop402+0x54>
+20000676:	47b5                	li	a5,13
+20000678:	00f99663          	bne	s3,a5,20000684 <.loop402+0x88>
+2000067c:	0b900513          	li	a0,185
+20000680:	31c9                	jal	20000342 <FLASH_ROM_BEG>
+20000682:	bd35                	j	200004be <FLASH_EEPROM_CMD+0xc0>
+20000684:	47b1                	li	a5,12
+20000686:	0ab00513          	li	a0,171
+2000068a:	fef98be3          	beq	s3,a5,20000680 <.loop402+0x84>
+2000068e:	4799                	li	a5,6
+20000690:	04f99163          	bne	s3,a5,200006d2 <.loop402+0xd6>
+20000694:	000805b7          	lui	a1,0x80
+20000698:	00bb65b3          	or	a1,s6,a1
+2000069c:	452d                	li	a0,11
+2000069e:	31c5                	jal	2000037e <FLASH_ROM_ADDR>
+200006a0:	4481                	li	s1,0
+200006a2:	4b8d                	li	s7,3
+200006a4:	49a1                	li	s3,8
+200006a6:	3975                	jal	20000362 <FLASH_ROM_IN>
+200006a8:	01749663          	bne	s1,s7,200006b4 <.loop402+0xb8>
+200006ac:	80042783          	lw	a5,-2048(s0)
+200006b0:	00f92023          	sw	a5,0(s2)
+200006b4:	0485                	addi	s1,s1,1
+200006b6:	ff3498e3          	bne	s1,s3,200006a6 <.loop402+0xaa>
+200006ba:	80042783          	lw	a5,-2048(s0)
+200006be:	012b1713          	slli	a4,s6,0x12
+200006c2:	00075563          	bgez	a4,200006cc <.loop402+0xd0>
+200006c6:	00f91223          	sh	a5,4(s2)
+200006ca:	bbd5                	j	200004be <FLASH_EEPROM_CMD+0xc0>
+200006cc:	00f92223          	sw	a5,4(s2)
+200006d0:	b3fd                	j	200004be <FLASH_EEPROM_CMD+0xc0>
+200006d2:	479d                	li	a5,7
+200006d4:	02f99963          	bne	s3,a5,20000706 <.loop402+0x10a>
+200006d8:	4581                	li	a1,0
+200006da:	04b00513          	li	a0,75
+200006de:	3145                	jal	2000037e <FLASH_ROM_ADDR>
+200006e0:	44bd                	li	s1,15
+200006e2:	00092023          	sw	zero,0(s2)
+200006e6:	00092223          	sw	zero,4(s2)
+200006ea:	59fd                	li	s3,-1
+200006ec:	399d                	jal	20000362 <FLASH_ROM_IN>
+200006ee:	0074f793          	andi	a5,s1,7
+200006f2:	97ca                	add	a5,a5,s2
+200006f4:	0007c703          	lbu	a4,0(a5) # 78000 <_data_lma+0x7700c>
+200006f8:	14fd                	addi	s1,s1,-1
+200006fa:	8d39                	xor	a0,a0,a4
+200006fc:	00a78023          	sb	a0,0(a5)
+20000700:	ff3496e3          	bne	s1,s3,200006ec <.loop402+0xf0>
+20000704:	bb6d                	j	200004be <FLASH_EEPROM_CMD+0xc0>
+20000706:	47a1                	li	a5,8
+20000708:	04f99263          	bne	s3,a5,2000074c <.loop402+0x150>
+2000070c:	396d                	jal	200003c6 <FLASH_ROM_WAIT>
+2000070e:	4481                	li	s1,0
+20000710:	000b0d63          	beqz	s6,2000072a <.loop402+0x12e>
+20000714:	478d                	li	a5,3
+20000716:	03c00493          	li	s1,60
+2000071a:	00fb0863          	beq	s6,a5,2000072a <.loop402+0x12e>
+2000071e:	05000493          	li	s1,80
+20000722:	018b0463          	beq	s6,s8,2000072a <.loop402+0x12e>
+20000726:	04400493          	li	s1,68
+2000072a:	07c57513          	andi	a0,a0,124
+2000072e:	d89508e3          	beq	a0,s1,200004be <FLASH_EEPROM_CMD+0xc0>
+20000732:	4519                	li	a0,6
+20000734:	3139                	jal	20000342 <FLASH_ROM_BEG>
+20000736:	3939                	jal	20000354 <FLASH_ROM_END>
+20000738:	4505                	li	a0,1
+2000073a:	3121                	jal	20000342 <FLASH_ROM_BEG>
+2000073c:	8526                	mv	a0,s1
+2000073e:	390d                	jal	20000370 <FLASH_ROM_OUT>
+20000740:	4509                	li	a0,2
+20000742:	313d                	jal	20000370 <FLASH_ROM_OUT>
+20000744:	3149                	jal	200003c6 <FLASH_ROM_WAIT>
+20000746:	d6051ce3          	bnez	a0,200004be <FLASH_EEPROM_CMD+0xc0>
+2000074a:	bb69                	j	200004e4 <FLASH_EEPROM_CMD+0xe6>
+2000074c:	4791                	li	a5,4
+2000074e:	00f99963          	bne	s3,a5,20000760 <.loop402+0x164>
+20000752:	06600513          	li	a0,102
+20000756:	36f5                	jal	20000342 <FLASH_ROM_BEG>
+20000758:	3ef5                	jal	20000354 <FLASH_ROM_END>
+2000075a:	09900513          	li	a0,153
+2000075e:	b70d                	j	20000680 <.loop402+0x84>
+20000760:	d4098fe3          	beqz	s3,200004be <FLASH_EEPROM_CMD+0xc0>
+20000764:	54f1                	li	s1,-4
+20000766:	bba9                	j	200004c0 <FLASH_EEPROM_CMD+0xc2>
+
+Disassembly of section .text:
+
+0000076c <handle_reset>:
+handle_reset():
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:127
+	.weak	handle_reset
+	.align	1
+handle_reset:
+.option push 
+.option	norelax 
+	la gp, __global_pointer$
+ 76c:	20001197          	auipc	gp,0x20001
+ 770:	80c18193          	addi	gp,gp,-2036 # 20000f78 <__global_pointer$>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:130
+.option	pop 
+1:
+	la sp, _eusrstack 
+ 774:	20006117          	auipc	sp,0x20006
+ 778:	08c10113          	addi	sp,sp,140 # 20006800 <_eusrstack>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:134
+
+/* Load highcode code  section from flash to RAM */
+2:
+    la a0, _highcode_lma
+ 77c:	00400513          	li	a0,4
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:135
+    la a1, _highcode_vma_start
+ 780:	20000597          	auipc	a1,0x20000
+ 784:	88058593          	addi	a1,a1,-1920 # 20000000 <_highcode_vma_start>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:136
+    la a2, _highcode_vma_end
+ 788:	20000617          	auipc	a2,0x20000
+ 78c:	fe060613          	addi	a2,a2,-32 # 20000768 <_highcode_vma_end>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:137
+    bgeu a1, a2, 2f
+ 790:	00c5fa63          	bgeu	a1,a2,7a4 <handle_reset+0x38>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:139
+1:
+    lw t0, (a0)
+ 794:	00052283          	lw	t0,0(a0)
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:140
+    sw t0, (a1)
+ 798:	0055a023          	sw	t0,0(a1)
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:141
+    addi a0, a0, 4
+ 79c:	0511                	addi	a0,a0,4
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:142
+    addi a1, a1, 4
+ 79e:	0591                	addi	a1,a1,4
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:143
+    bltu a1, a2, 1b
+ 7a0:	fec5eae3          	bltu	a1,a2,794 <handle_reset+0x28>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:147
+
+/* Load data section from flash to RAM */
+2:
+	la a0, _data_lma
+ 7a4:	00001517          	auipc	a0,0x1
+ 7a8:	85050513          	addi	a0,a0,-1968 # ff4 <_data_lma>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:148
+	la a1, _data_vma
+ 7ac:	20000597          	auipc	a1,0x20000
+ 7b0:	fbc58593          	addi	a1,a1,-68 # 20000768 <_highcode_vma_end>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:149
+	la a2, _edata
+ 7b4:	20000617          	auipc	a2,0x20000
+ 7b8:	fc460613          	addi	a2,a2,-60 # 20000778 <_edata>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:150
+	bgeu a1, a2, 2f
+ 7bc:	00c5fa63          	bgeu	a1,a2,7d0 <handle_reset+0x64>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:152
+1:
+	lw t0, (a0)
+ 7c0:	00052283          	lw	t0,0(a0)
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:153
+	sw t0, (a1)
+ 7c4:	0055a023          	sw	t0,0(a1)
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:154
+	addi a0, a0, 4
+ 7c8:	0511                	addi	a0,a0,4
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:155
+	addi a1, a1, 4
+ 7ca:	0591                	addi	a1,a1,4
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:156
+	bltu a1, a2, 1b
+ 7cc:	fec5eae3          	bltu	a1,a2,7c0 <handle_reset+0x54>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:159
+2:
+	/* clear bss section */
+	la a0, _sbss
+ 7d0:	20000517          	auipc	a0,0x20000
+ 7d4:	fa850513          	addi	a0,a0,-88 # 20000778 <_edata>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:160
+	la a1, _ebss
+ 7d8:	86418593          	addi	a1,gp,-1948 # 200007dc <_ebss>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:161
+	bgeu a0, a1, 2f
+ 7dc:	00b57763          	bgeu	a0,a1,7ea <handle_reset+0x7e>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:163
+1:
+	sw zero, (a0)
+ 7e0:	00052023          	sw	zero,0(a0)
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:164
+	addi a0, a0, 4
+ 7e4:	0511                	addi	a0,a0,4
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:165
+	bltu a0, a1, 1b
+ 7e6:	feb56de3          	bltu	a0,a1,7e0 <handle_reset+0x74>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:168
+2:
+	/* 流水线控制位 & 动态预测控制位 */
+	li t0, 0x1f
+ 7ea:	42fd                	li	t0,31
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:169
+	csrw 0xbc0, t0
+ 7ec:	bc029073          	csrw	0xbc0,t0
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:171
+	/* 打开嵌套中断、硬件压栈功能 */
+	li t0, 0x3
+ 7f0:	428d                	li	t0,3
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:172
+	csrw 0x804, t0
+ 7f2:	80429073          	csrw	0x804,t0
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:174
+	
+    li t0, 0x88
+ 7f6:	08800293          	li	t0,136
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:175
+    csrw mstatus, t0
+ 7fa:	30029073          	csrw	mstatus,t0
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:176
+	la t0, _vector_base
+ 7fe:	20000297          	auipc	t0,0x20000
+ 802:	80228293          	addi	t0,t0,-2046 # 20000000 <_highcode_vma_start>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:179
+
+	/* 配置向量表模式为绝对地址模式 */
+    ori t0, t0, 3
+ 806:	0032e293          	ori	t0,t0,3
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:180
+	csrw mtvec, t0
+ 80a:	30529073          	csrw	mtvec,t0
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:182
+
+	la t0, main
+ 80e:	00000297          	auipc	t0,0x0
+ 812:	12e28293          	addi	t0,t0,302 # 93c <main>
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:183
+	csrw mepc, t0
+ 816:	34129073          	csrw	mepc,t0
+D:/CH592/EVT/EXAM/SRC/Startup/startup_CH592.S:185
+	
+	mret
+ 81a:	30200073          	mret
+
+0000081e <strcmp>:
+strcmp():
+ 81e:	00b56733          	or	a4,a0,a1
+ 822:	53fd                	li	t2,-1
+ 824:	8b0d                	andi	a4,a4,3
+ 826:	e779                	bnez	a4,8f4 <strcmp+0xd6>
+ 828:	7f7f87b7          	lui	a5,0x7f7f8
+ 82c:	f7f78793          	addi	a5,a5,-129 # 7f7f7f7f <_eusrstack+0x5f7f177f>
+ 830:	4110                	lw	a2,0(a0)
+ 832:	4194                	lw	a3,0(a1)
+ 834:	00f672b3          	and	t0,a2,a5
+ 838:	00f66333          	or	t1,a2,a5
+ 83c:	92be                	add	t0,t0,a5
+ 83e:	0062e2b3          	or	t0,t0,t1
+ 842:	0c729763          	bne	t0,t2,910 <strcmp+0xf2>
+ 846:	06d61863          	bne	a2,a3,8b6 <strcmp+0x98>
+ 84a:	4150                	lw	a2,4(a0)
+ 84c:	41d4                	lw	a3,4(a1)
+ 84e:	00f672b3          	and	t0,a2,a5
+ 852:	00f66333          	or	t1,a2,a5
+ 856:	92be                	add	t0,t0,a5
+ 858:	0062e2b3          	or	t0,t0,t1
+ 85c:	0a729863          	bne	t0,t2,90c <strcmp+0xee>
+ 860:	04d61b63          	bne	a2,a3,8b6 <strcmp+0x98>
+ 864:	4510                	lw	a2,8(a0)
+ 866:	4594                	lw	a3,8(a1)
+ 868:	00f672b3          	and	t0,a2,a5
+ 86c:	00f66333          	or	t1,a2,a5
+ 870:	92be                	add	t0,t0,a5
+ 872:	0062e2b3          	or	t0,t0,t1
+ 876:	0a729163          	bne	t0,t2,918 <strcmp+0xfa>
+ 87a:	02d61e63          	bne	a2,a3,8b6 <strcmp+0x98>
+ 87e:	4550                	lw	a2,12(a0)
+ 880:	45d4                	lw	a3,12(a1)
+ 882:	00f672b3          	and	t0,a2,a5
+ 886:	00f66333          	or	t1,a2,a5
+ 88a:	92be                	add	t0,t0,a5
+ 88c:	0062e2b3          	or	t0,t0,t1
+ 890:	08729a63          	bne	t0,t2,924 <strcmp+0x106>
+ 894:	02d61163          	bne	a2,a3,8b6 <strcmp+0x98>
+ 898:	4910                	lw	a2,16(a0)
+ 89a:	4994                	lw	a3,16(a1)
+ 89c:	00f672b3          	and	t0,a2,a5
+ 8a0:	00f66333          	or	t1,a2,a5
+ 8a4:	92be                	add	t0,t0,a5
+ 8a6:	0062e2b3          	or	t0,t0,t1
+ 8aa:	08729363          	bne	t0,t2,930 <strcmp+0x112>
+ 8ae:	0551                	addi	a0,a0,20
+ 8b0:	05d1                	addi	a1,a1,20
+ 8b2:	f6d60fe3          	beq	a2,a3,830 <strcmp+0x12>
+ 8b6:	01061713          	slli	a4,a2,0x10
+ 8ba:	01069793          	slli	a5,a3,0x10
+ 8be:	00f71c63          	bne	a4,a5,8d6 <strcmp+0xb8>
+ 8c2:	01065713          	srli	a4,a2,0x10
+ 8c6:	0106d793          	srli	a5,a3,0x10
+ 8ca:	40f70533          	sub	a0,a4,a5
+ 8ce:	0ff57593          	andi	a1,a0,255
+ 8d2:	e991                	bnez	a1,8e6 <strcmp+0xc8>
+ 8d4:	8082                	ret
+ 8d6:	8341                	srli	a4,a4,0x10
+ 8d8:	83c1                	srli	a5,a5,0x10
+ 8da:	40f70533          	sub	a0,a4,a5
+ 8de:	0ff57593          	andi	a1,a0,255
+ 8e2:	e191                	bnez	a1,8e6 <strcmp+0xc8>
+ 8e4:	8082                	ret
+ 8e6:	0ff77713          	andi	a4,a4,255
+ 8ea:	0ff7f793          	andi	a5,a5,255
+ 8ee:	40f70533          	sub	a0,a4,a5
+ 8f2:	8082                	ret
+ 8f4:	00054603          	lbu	a2,0(a0)
+ 8f8:	0005c683          	lbu	a3,0(a1)
+ 8fc:	0505                	addi	a0,a0,1
+ 8fe:	0585                	addi	a1,a1,1
+ 900:	00d61363          	bne	a2,a3,906 <strcmp+0xe8>
+ 904:	fa65                	bnez	a2,8f4 <strcmp+0xd6>
+ 906:	40d60533          	sub	a0,a2,a3
+ 90a:	8082                	ret
+ 90c:	0511                	addi	a0,a0,4
+ 90e:	0591                	addi	a1,a1,4
+ 910:	fed612e3          	bne	a2,a3,8f4 <strcmp+0xd6>
+ 914:	4501                	li	a0,0
+ 916:	8082                	ret
+ 918:	0521                	addi	a0,a0,8
+ 91a:	05a1                	addi	a1,a1,8
+ 91c:	fcd61ce3          	bne	a2,a3,8f4 <strcmp+0xd6>
+ 920:	4501                	li	a0,0
+ 922:	8082                	ret
+ 924:	0531                	addi	a0,a0,12
+ 926:	05b1                	addi	a1,a1,12
+ 928:	fcd616e3          	bne	a2,a3,8f4 <strcmp+0xd6>
+ 92c:	4501                	li	a0,0
+ 92e:	8082                	ret
+ 930:	0541                	addi	a0,a0,16
+ 932:	05c1                	addi	a1,a1,16
+ 934:	fcd610e3          	bne	a2,a3,8f4 <strcmp+0xd6>
+ 938:	4501                	li	a0,0
+ 93a:	8082                	ret
+
+0000093c <main>:
+main():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:29
+ * @brief   主函数
+ *
+ * @return  none
+ */
+int main()
+{
+ 93c:	1141                	addi	sp,sp,-16
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:30
+    SetSysClock(CLK_SOURCE_PLL_60MHz);
+ 93e:	04800513          	li	a0,72
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:29
+{
+ 942:	c606                	sw	ra,12(sp)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:30
+    SetSysClock(CLK_SOURCE_PLL_60MHz);
+ 944:	1ffff097          	auipc	ra,0x1ffff
+ 948:	74e080e7          	jalr	1870(ra) # 20000092 <SetSysClock>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:32
+    /* 配置GPIO */
+        GPIOB_ModeCfg(GPIO_Pin_7, GPIO_ModeOut_PP_20mA);  // PB7 - PWM9
+ 94c:	4591                	li	a1,4
+ 94e:	08000513          	li	a0,128
+ 952:	23ad                	jal	ebc <GPIOB_ModeCfg>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:33
+        GPIOB_ModeCfg(GPIO_Pin_6, GPIO_ModeOut_PP_20mA);  // PB7 - PWM9
+ 954:	4591                	li	a1,4
+ 956:	04000513          	li	a0,64
+ 95a:	238d                	jal	ebc <GPIOB_ModeCfg>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:34
+        GPIOB_ModeCfg(GPIO_Pin_4, GPIO_ModeOut_PP_20mA);  // PB7 - PWM9
+ 95c:	4541                	li	a0,16
+ 95e:	4591                	li	a1,4
+ 960:	2bb1                	jal	ebc <GPIOB_ModeCfg>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:37
+//        注意这里的格式是GRB
+
+        chuli_proc(message);
+ 962:	20000517          	auipc	a0,0x20000
+ 966:	e0650513          	addi	a0,a0,-506 # 20000768 <_highcode_vma_end>
+ 96a:	2c95                	jal	bde <chuli_proc>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/Main.c:42 (discriminator 1)
+
+    while(1)
+    {
+
+}
+ 96c:	a001                	j	96c <main+0x30>
+
+0000096e <Set0Code>:
+Set0Code():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:42
+ char segments[2][4][5];
+
+
+//发0码
+void Set0Code(void) {
+    GPIOB_SetBits(GPIO_Pin_7);
+ 96e:	400017b7          	lui	a5,0x40001
+ 972:	0c87a703          	lw	a4,200(a5) # 400010c8 <_eusrstack+0x1fffa8c8>
+ 976:	08076713          	ori	a4,a4,128
+ 97a:	0ce7a423          	sw	a4,200(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:43
+    __nop();
+ 97e:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:44
+    __nop();
+ 980:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:45
+    GPIOB_ResetBits(GPIO_Pin_7);
+ 982:	0cc7a703          	lw	a4,204(a5)
+ 986:	08076713          	ori	a4,a4,128
+ 98a:	0ce7a623          	sw	a4,204(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:47
+    //       NOP();
+}
+ 98e:	8082                	ret
+
+00000990 <Set0Code1>:
+Set0Code1():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:51
+
+//发0码
+void Set0Code1(void) {
+    GPIOB_SetBits(GPIO_Pin_6);
+ 990:	400017b7          	lui	a5,0x40001
+ 994:	0c87a703          	lw	a4,200(a5) # 400010c8 <_eusrstack+0x1fffa8c8>
+ 998:	04076713          	ori	a4,a4,64
+ 99c:	0ce7a423          	sw	a4,200(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:52
+    __nop();
+ 9a0:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:53
+    __nop();
+ 9a2:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:54
+    GPIOB_ResetBits(GPIO_Pin_6);
+ 9a4:	0cc7a703          	lw	a4,204(a5)
+ 9a8:	04076713          	ori	a4,a4,64
+ 9ac:	0ce7a623          	sw	a4,204(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:56
+    //       NOP();
+}
+ 9b0:	8082                	ret
+
+000009b2 <Set0Code2>:
+Set0Code2():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:60
+
+//发0码
+void Set0Code2(void) {
+    GPIOB_SetBits(GPIO_Pin_4);
+ 9b2:	400017b7          	lui	a5,0x40001
+ 9b6:	0c87a703          	lw	a4,200(a5) # 400010c8 <_eusrstack+0x1fffa8c8>
+ 9ba:	01076713          	ori	a4,a4,16
+ 9be:	0ce7a423          	sw	a4,200(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:61
+    __nop();
+ 9c2:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:62
+    __nop();
+ 9c4:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:63
+    GPIOB_ResetBits(GPIO_Pin_4);
+ 9c6:	0cc7a703          	lw	a4,204(a5)
+ 9ca:	01076713          	ori	a4,a4,16
+ 9ce:	0ce7a623          	sw	a4,204(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:65
+    //       NOP();
+}
+ 9d2:	8082                	ret
+
+000009d4 <Set1Code>:
+Set1Code():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:68
+//发1码
+void Set1Code(void) {
+    GPIOB_SetBits(GPIO_Pin_7);
+ 9d4:	400017b7          	lui	a5,0x40001
+ 9d8:	0c87a703          	lw	a4,200(a5) # 400010c8 <_eusrstack+0x1fffa8c8>
+ 9dc:	08076713          	ori	a4,a4,128
+ 9e0:	0ce7a423          	sw	a4,200(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:69
+    __nop();
+ 9e4:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:70
+    __nop();
+ 9e6:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:71
+    __nop();
+ 9e8:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:72
+    __nop();
+ 9ea:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:73
+    __nop();
+ 9ec:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:74
+    __nop();
+ 9ee:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:75
+    __nop();
+ 9f0:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:76
+    __nop();
+ 9f2:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:77
+    GPIOB_ResetBits(GPIO_Pin_7);
+ 9f4:	0cc7a703          	lw	a4,204(a5)
+ 9f8:	08076713          	ori	a4,a4,128
+ 9fc:	0ce7a623          	sw	a4,204(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:78
+}
+ a00:	8082                	ret
+
+00000a02 <Set1Code1>:
+Set1Code1():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:83
+
+
+//发1码
+void Set1Code1(void) {
+    GPIOB_SetBits(GPIO_Pin_6);
+ a02:	400017b7          	lui	a5,0x40001
+ a06:	0c87a703          	lw	a4,200(a5) # 400010c8 <_eusrstack+0x1fffa8c8>
+ a0a:	04076713          	ori	a4,a4,64
+ a0e:	0ce7a423          	sw	a4,200(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:84
+    __nop();
+ a12:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:85
+    __nop();
+ a14:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:86
+    __nop();
+ a16:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:87
+    __nop();
+ a18:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:88
+    __nop();
+ a1a:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:89
+    __nop();
+ a1c:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:90
+    __nop();
+ a1e:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:91
+    __nop();
+ a20:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:92
+    GPIOB_ResetBits(GPIO_Pin_6);
+ a22:	0cc7a703          	lw	a4,204(a5)
+ a26:	04076713          	ori	a4,a4,64
+ a2a:	0ce7a623          	sw	a4,204(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:93
+}
+ a2e:	8082                	ret
+
+00000a30 <Set1Code2>:
+Set1Code2():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:97
+
+//发1码
+void Set1Code2(void) {
+    GPIOB_SetBits(GPIO_Pin_4);
+ a30:	400017b7          	lui	a5,0x40001
+ a34:	0c87a703          	lw	a4,200(a5) # 400010c8 <_eusrstack+0x1fffa8c8>
+ a38:	01076713          	ori	a4,a4,16
+ a3c:	0ce7a423          	sw	a4,200(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:98
+    __nop();
+ a40:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:99
+    __nop();
+ a42:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:100
+    __nop();
+ a44:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:101
+    __nop();
+ a46:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:102
+    __nop();
+ a48:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:103
+    __nop();
+ a4a:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:104
+    __nop();
+ a4c:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:105
+    __nop();
+ a4e:	0001                	nop
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:106
+    GPIOB_ResetBits(GPIO_Pin_4);
+ a50:	0cc7a703          	lw	a4,204(a5)
+ a54:	01076713          	ori	a4,a4,16
+ a58:	0ce7a623          	sw	a4,204(a5)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:107
+}
+ a5c:	8082                	ret
+
+00000a5e <SendOnePix>:
+SendOnePix():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:110
+
+//发一个像素
+void SendOnePix(unsigned char *ptr) {
+ a5e:	1101                	addi	sp,sp,-32
+ a60:	c84a                	sw	s2,16(sp)
+ a62:	c64e                	sw	s3,12(sp)
+ a64:	c452                	sw	s4,8(sp)
+ a66:	ce06                	sw	ra,28(sp)
+ a68:	cc22                	sw	s0,24(sp)
+ a6a:	ca26                	sw	s1,20(sp)
+ a6c:	8a2a                	mv	s4,a0
+ a6e:	4901                	li	s2,0
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:114
+    unsigned char i, j;
+    unsigned char temp;
+
+    for (j = 0; j < 3; j++) {
+ a70:	498d                	li	s3,3
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:115
+        temp = ptr[j];
+ a72:	012a07b3          	add	a5,s4,s2
+ a76:	0007c483          	lbu	s1,0(a5)
+ a7a:	4421                	li	s0,8
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:117
+        for (i = 0; i < 8; i++) {
+            if (temp & 0x80)        //从高位开始发送
+ a7c:	01849793          	slli	a5,s1,0x18
+ a80:	87e1                	srai	a5,a5,0x18
+ a82:	0207d563          	bgez	a5,aac <SendOnePix+0x4e>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:119
+                    {
+                Set1Code();
+ a86:	37b9                	jal	9d4 <Set1Code>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:124 (discriminator 2)
+            } else                //发送“0”码
+            {
+                Set0Code();
+            }
+            temp = (temp << 1);      //左移位
+ a88:	147d                	addi	s0,s0,-1
+ a8a:	0486                	slli	s1,s1,0x1
+ a8c:	0ff47413          	andi	s0,s0,255
+ a90:	0ff4f493          	andi	s1,s1,255
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:116 (discriminator 2)
+        for (i = 0; i < 8; i++) {
+ a94:	f465                	bnez	s0,a7c <SendOnePix+0x1e>
+ a96:	0905                	addi	s2,s2,1
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:114 (discriminator 2)
+    for (j = 0; j < 3; j++) {
+ a98:	fd391de3          	bne	s2,s3,a72 <SendOnePix+0x14>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:127
+        }
+    }
+}
+ a9c:	40f2                	lw	ra,28(sp)
+ a9e:	4462                	lw	s0,24(sp)
+ aa0:	44d2                	lw	s1,20(sp)
+ aa2:	4942                	lw	s2,16(sp)
+ aa4:	49b2                	lw	s3,12(sp)
+ aa6:	4a22                	lw	s4,8(sp)
+ aa8:	6105                	addi	sp,sp,32
+ aaa:	8082                	ret
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:122
+                Set0Code();
+ aac:	35c9                	jal	96e <Set0Code>
+ aae:	bfe9                	j	a88 <SendOnePix+0x2a>
+
+00000ab0 <SendOnePix1>:
+SendOnePix1():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:130
+
+
+void SendOnePix1(unsigned char *ptr1) {
+ ab0:	1101                	addi	sp,sp,-32
+ ab2:	c84a                	sw	s2,16(sp)
+ ab4:	c64e                	sw	s3,12(sp)
+ ab6:	c452                	sw	s4,8(sp)
+ ab8:	ce06                	sw	ra,28(sp)
+ aba:	cc22                	sw	s0,24(sp)
+ abc:	ca26                	sw	s1,20(sp)
+ abe:	8a2a                	mv	s4,a0
+ ac0:	4901                	li	s2,0
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:134
+    unsigned char i1, j1;
+    unsigned char temp1;
+
+    for (j1 = 0; j1 < 3; j1++) {
+ ac2:	498d                	li	s3,3
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:135
+        temp1 = ptr1[j1];
+ ac4:	012a07b3          	add	a5,s4,s2
+ ac8:	0007c483          	lbu	s1,0(a5)
+ acc:	4421                	li	s0,8
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:137
+        for (i1 = 0; i1 < 8; i1++) {
+            if (temp1 & 0x80)        //从高位开始发送
+ ace:	01849793          	slli	a5,s1,0x18
+ ad2:	87e1                	srai	a5,a5,0x18
+ ad4:	0207d563          	bgez	a5,afe <SendOnePix1+0x4e>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:139
+                    {
+                Set1Code1();
+ ad8:	372d                	jal	a02 <Set1Code1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:144 (discriminator 2)
+            } else                //发送“0”码
+            {
+                Set0Code1();
+            }
+            temp1 = (temp1 << 1);      //左移位
+ ada:	147d                	addi	s0,s0,-1
+ adc:	0486                	slli	s1,s1,0x1
+ ade:	0ff47413          	andi	s0,s0,255
+ ae2:	0ff4f493          	andi	s1,s1,255
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:136 (discriminator 2)
+        for (i1 = 0; i1 < 8; i1++) {
+ ae6:	f465                	bnez	s0,ace <SendOnePix1+0x1e>
+ ae8:	0905                	addi	s2,s2,1
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:134 (discriminator 2)
+    for (j1 = 0; j1 < 3; j1++) {
+ aea:	fd391de3          	bne	s2,s3,ac4 <SendOnePix1+0x14>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:147
+        }
+    }
+}
+ aee:	40f2                	lw	ra,28(sp)
+ af0:	4462                	lw	s0,24(sp)
+ af2:	44d2                	lw	s1,20(sp)
+ af4:	4942                	lw	s2,16(sp)
+ af6:	49b2                	lw	s3,12(sp)
+ af8:	4a22                	lw	s4,8(sp)
+ afa:	6105                	addi	sp,sp,32
+ afc:	8082                	ret
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:142
+                Set0Code1();
+ afe:	3d49                	jal	990 <Set0Code1>
+ b00:	bfe9                	j	ada <SendOnePix1+0x2a>
+
+00000b02 <SendOnePix2>:
+SendOnePix2():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:149
+
+void SendOnePix2(unsigned char *ptr2) {
+ b02:	1101                	addi	sp,sp,-32
+ b04:	c84a                	sw	s2,16(sp)
+ b06:	c64e                	sw	s3,12(sp)
+ b08:	c452                	sw	s4,8(sp)
+ b0a:	ce06                	sw	ra,28(sp)
+ b0c:	cc22                	sw	s0,24(sp)
+ b0e:	ca26                	sw	s1,20(sp)
+ b10:	8a2a                	mv	s4,a0
+ b12:	4901                	li	s2,0
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:153
+    unsigned char i2, j2;
+    unsigned char temp2;
+
+    for (j2 = 0; j2 < 3; j2++) {
+ b14:	498d                	li	s3,3
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:154
+        temp2 = ptr2[j2];
+ b16:	012a07b3          	add	a5,s4,s2
+ b1a:	0007c483          	lbu	s1,0(a5)
+ b1e:	4421                	li	s0,8
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:156
+        for (i2 = 0; i2 < 8; i2++) {
+            if (temp2 & 0x80)        //从高位开始发送
+ b20:	01849793          	slli	a5,s1,0x18
+ b24:	87e1                	srai	a5,a5,0x18
+ b26:	0207d563          	bgez	a5,b50 <SendOnePix2+0x4e>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:158
+                    {
+                Set1Code2();
+ b2a:	3719                	jal	a30 <Set1Code2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:163 (discriminator 2)
+            } else                //发送“0”码
+            {
+                Set0Code2();
+            }
+            temp2 = (temp2 << 1);      //左移位
+ b2c:	147d                	addi	s0,s0,-1
+ b2e:	0486                	slli	s1,s1,0x1
+ b30:	0ff47413          	andi	s0,s0,255
+ b34:	0ff4f493          	andi	s1,s1,255
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:155 (discriminator 2)
+        for (i2 = 0; i2 < 8; i2++) {
+ b38:	f465                	bnez	s0,b20 <SendOnePix2+0x1e>
+ b3a:	0905                	addi	s2,s2,1
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:153 (discriminator 2)
+    for (j2 = 0; j2 < 3; j2++) {
+ b3c:	fd391de3          	bne	s2,s3,b16 <SendOnePix2+0x14>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:166
+        }
+    }
+}
+ b40:	40f2                	lw	ra,28(sp)
+ b42:	4462                	lw	s0,24(sp)
+ b44:	44d2                	lw	s1,20(sp)
+ b46:	4942                	lw	s2,16(sp)
+ b48:	49b2                	lw	s3,12(sp)
+ b4a:	4a22                	lw	s4,8(sp)
+ b4c:	6105                	addi	sp,sp,32
+ b4e:	8082                	ret
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:161
+                Set0Code2();
+ b50:	358d                	jal	9b2 <Set0Code2>
+ b52:	bfe9                	j	b2c <SendOnePix2+0x2a>
+
+00000b54 <SendOneFrame>:
+SendOneFrame():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:168
+//发一帧数据
+void SendOneFrame(unsigned char *ptr) {
+ b54:	1141                	addi	sp,sp,-16
+ b56:	c606                	sw	ra,12(sp)
+ b58:	c422                	sw	s0,8(sp)
+ b5a:	842a                	mv	s0,a0
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:176
+    //  PWM_RGB=0;//发送帧复位信号
+    //  DelayMs(1);
+
+    for (k = 0; k < SNUM; k++)              //发送一帧数据，SNUM是板子LED的个数
+            {
+        SendOnePix(&ptr[(3 * k)]);
+ b5c:	3709                	jal	a5e <SendOnePix>
+ b5e:	00340513          	addi	a0,s0,3
+ b62:	3df5                	jal	a5e <SendOnePix>
+ b64:	00640513          	addi	a0,s0,6
+ b68:	3ddd                	jal	a5e <SendOnePix>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:179
+    }
+
+    GPIOB_ResetBits(GPIO_Pin_7);              //发送帧复位信号
+ b6a:	40001737          	lui	a4,0x40001
+ b6e:	0cc72783          	lw	a5,204(a4) # 400010cc <_eusrstack+0x1fffa8cc>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:181
+
+}
+ b72:	40b2                	lw	ra,12(sp)
+ b74:	4422                	lw	s0,8(sp)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:179
+    GPIOB_ResetBits(GPIO_Pin_7);              //发送帧复位信号
+ b76:	0807e793          	ori	a5,a5,128
+ b7a:	0cf72623          	sw	a5,204(a4)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:181
+}
+ b7e:	0141                	addi	sp,sp,16
+ b80:	8082                	ret
+
+00000b82 <SendOneFrame1>:
+SendOneFrame1():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:185
+
+
+//发一帧数据
+void SendOneFrame1(unsigned char *ptr1) {
+ b82:	1141                	addi	sp,sp,-16
+ b84:	c606                	sw	ra,12(sp)
+ b86:	c422                	sw	s0,8(sp)
+ b88:	842a                	mv	s0,a0
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:193
+    //  PWM_RGB=0;//发送帧复位信号
+    //  DelayMs(1);
+
+    for (k1 = 0; k1 < SNUM1; k1++)              //发送一帧数据，SNUM是板子LED的个数
+            {
+        SendOnePix1(&ptr1[(3 * k1)]);
+ b8a:	371d                	jal	ab0 <SendOnePix1>
+ b8c:	00340513          	addi	a0,s0,3
+ b90:	3705                	jal	ab0 <SendOnePix1>
+ b92:	00640513          	addi	a0,s0,6
+ b96:	3f29                	jal	ab0 <SendOnePix1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:196
+    }
+
+    GPIOB_ResetBits(GPIO_Pin_6);              //发送帧复位信号
+ b98:	40001737          	lui	a4,0x40001
+ b9c:	0cc72783          	lw	a5,204(a4) # 400010cc <_eusrstack+0x1fffa8cc>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:198
+
+}
+ ba0:	40b2                	lw	ra,12(sp)
+ ba2:	4422                	lw	s0,8(sp)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:196
+    GPIOB_ResetBits(GPIO_Pin_6);              //发送帧复位信号
+ ba4:	0407e793          	ori	a5,a5,64
+ ba8:	0cf72623          	sw	a5,204(a4)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:198
+}
+ bac:	0141                	addi	sp,sp,16
+ bae:	8082                	ret
+
+00000bb0 <SendOneFrame2>:
+SendOneFrame2():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:202
+
+
+//发一帧数据
+void SendOneFrame2(unsigned char *ptr2) {
+ bb0:	1141                	addi	sp,sp,-16
+ bb2:	c606                	sw	ra,12(sp)
+ bb4:	c422                	sw	s0,8(sp)
+ bb6:	842a                	mv	s0,a0
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:210
+    //  PWM_RGB=0;//发送帧复位信号
+    //  DelayMs(1);
+
+    for (k2 = 0; k2 < SNUM2; k2++)              //发送一帧数据，SNUM是板子LED的个数
+            {
+        SendOnePix2(&ptr2[(3 * k2)]);
+ bb8:	37a9                	jal	b02 <SendOnePix2>
+ bba:	00340513          	addi	a0,s0,3
+ bbe:	3791                	jal	b02 <SendOnePix2>
+ bc0:	00640513          	addi	a0,s0,6
+ bc4:	3f3d                	jal	b02 <SendOnePix2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:213
+    }
+
+    GPIOB_ResetBits(GPIO_Pin_4);              //发送帧复位信号
+ bc6:	40001737          	lui	a4,0x40001
+ bca:	0cc72783          	lw	a5,204(a4) # 400010cc <_eusrstack+0x1fffa8cc>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:215
+
+}
+ bce:	40b2                	lw	ra,12(sp)
+ bd0:	4422                	lw	s0,8(sp)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:213
+    GPIOB_ResetBits(GPIO_Pin_4);              //发送帧复位信号
+ bd2:	0107e793          	ori	a5,a5,16
+ bd6:	0cf72623          	sw	a5,204(a4)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:215
+}
+ bda:	0141                	addi	sp,sp,16
+ bdc:	8082                	ret
+
+00000bde <chuli_proc>:
+chuli_proc():
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:222
+
+
+
+
+void chuli_proc(char message[])
+{
+ bde:	7179                	addi	sp,sp,-48
+ be0:	d422                	sw	s0,40(sp)
+ be2:	d226                	sw	s1,36(sp)
+ be4:	d04a                	sw	s2,32(sp)
+ be6:	ce4e                	sw	s3,28(sp)
+ be8:	ca56                	sw	s5,20(sp)
+ bea:	c85a                	sw	s6,16(sp)
+ bec:	c65e                	sw	s7,12(sp)
+ bee:	c462                	sw	s8,8(sp)
+ bf0:	84aa                	mv	s1,a0
+ bf2:	d606                	sw	ra,44(sp)
+ bf4:	cc52                	sw	s4,24(sp)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:223
+    int length = strlen(message);  // 计算字符串长度
+ bf6:	26b5                	jal	f62 <strlen>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:224
+    int result = length / 13;   // 计算长度除以13的商
+ bf8:	47b5                	li	a5,13
+ bfa:	02f54ab3          	div	s5,a0,a5
+ bfe:	83c18413          	addi	s0,gp,-1988 # 200007b4 <segments>
+ c02:	80c18913          	addi	s2,gp,-2036 # 20000784 <numberone>
+ c06:	20000b97          	auipc	s7,0x20000
+ c0a:	b72b8b93          	addi	s7,s7,-1166 # 20000778 <_edata>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:244
+        strncpy( segments[a-1][3], message + 10+13*(a-1), 3);
+        segments[a-1][3][4] = '\0';
+
+        while (segments[a-1][1][ione] != '\0') {
+            // 将字符转换为对应的数字并累加到结果中
+            numberone = numberone * 10 + (segments[a-1][1][ione] - '0');
+ c0e:	4b29                	li	s6,10
+ c10:	81418993          	addi	s3,gp,-2028 # 2000078c <numbertwo>
+ c14:	80818c13          	addi	s8,gp,-2040 # 20000780 <itwo>
+ c18:	02fa8ab3          	mul	s5,s5,a5
+ c1c:	9aa6                	add	s5,s5,s1
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:227 (discriminator 1)
+    for(int a=1;a<b;a=a+1)
+ c1e:	029a9463          	bne	s5,s1,c46 <chuli_proc+0x68>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:353
+
+                                       numberone=0;
+                                       numbertwo=0;
+                                       numberthree=0;
+
+}
+ c22:	50b2                	lw	ra,44(sp)
+ c24:	5422                	lw	s0,40(sp)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:349
+                                       numberone=0;
+ c26:	8001a623          	sw	zero,-2036(gp) # 20000784 <numberone>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:350
+                                       numbertwo=0;
+ c2a:	8001aa23          	sw	zero,-2028(gp) # 2000078c <numbertwo>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:351
+                                       numberthree=0;
+ c2e:	8001a823          	sw	zero,-2032(gp) # 20000788 <numberthree>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:353
+}
+ c32:	5492                	lw	s1,36(sp)
+ c34:	5902                	lw	s2,32(sp)
+ c36:	49f2                	lw	s3,28(sp)
+ c38:	4a62                	lw	s4,24(sp)
+ c3a:	4ad2                	lw	s5,20(sp)
+ c3c:	4b42                	lw	s6,16(sp)
+ c3e:	4bb2                	lw	s7,12(sp)
+ c40:	4c22                	lw	s8,8(sp)
+ c42:	6145                	addi	sp,sp,48
+ c44:	8082                	ret
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:230
+    strncpy(segments[a-1][0], message+13*(a-1), 4);
+ c46:	4611                	li	a2,4
+ c48:	85a6                	mv	a1,s1
+ c4a:	8522                	mv	a0,s0
+ c4c:	2625                	jal	f74 <strncpy>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:233
+        strncpy( segments[a-1][1], message + 4+13*(a-1), 3);
+ c4e:	460d                	li	a2,3
+ c50:	00448593          	addi	a1,s1,4
+ c54:	00540513          	addi	a0,s0,5
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:231
+    segments[a-1][0][5] = '\0'; // Null-terminate the string
+ c58:	000402a3          	sb	zero,5(s0)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:233
+        strncpy( segments[a-1][1], message + 4+13*(a-1), 3);
+ c5c:	2e21                	jal	f74 <strncpy>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:236
+        strncpy(segments[a-1][2], message + 7+13*(a-1), 3);
+ c5e:	460d                	li	a2,3
+ c60:	00748593          	addi	a1,s1,7
+ c64:	00a40513          	addi	a0,s0,10
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:234
+        segments[a-1][1][4]= '\0';
+ c68:	000404a3          	sb	zero,9(s0)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:236
+        strncpy(segments[a-1][2], message + 7+13*(a-1), 3);
+ c6c:	2621                	jal	f74 <strncpy>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:239
+        strncpy( segments[a-1][3], message + 10+13*(a-1), 3);
+ c6e:	460d                	li	a2,3
+ c70:	00a48593          	addi	a1,s1,10
+ c74:	00f40513          	addi	a0,s0,15
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:237
+        segments[a-1][2][4] = '\0';
+ c78:	00040723          	sb	zero,14(s0)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:239
+        strncpy( segments[a-1][3], message + 10+13*(a-1), 3);
+ c7c:	2ce5                	jal	f74 <strncpy>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:240
+        segments[a-1][3][4] = '\0';
+ c7e:	00092783          	lw	a5,0(s2)
+ c82:	000ba683          	lw	a3,0(s7)
+ c86:	000409a3          	sb	zero,19(s0)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:242
+        while (segments[a-1][1][ione] != '\0') {
+ c8a:	4601                	li	a2,0
+ c8c:	85b6                	mv	a1,a3
+ c8e:	0685                	addi	a3,a3,1
+ c90:	00d40733          	add	a4,s0,a3
+ c94:	00470703          	lb	a4,4(a4)
+ c98:	1e071d63          	bnez	a4,e92 <chuli_proc+0x2b4>
+ c9c:	c619                	beqz	a2,caa <chuli_proc+0xcc>
+ c9e:	80f1a623          	sw	a5,-2036(gp) # 20000784 <numberone>
+ ca2:	20000797          	auipc	a5,0x20000
+ ca6:	acb7ab23          	sw	a1,-1322(a5) # 20000778 <_edata>
+ caa:	0009a783          	lw	a5,0(s3)
+ cae:	000c2683          	lw	a3,0(s8)
+ cb2:	4601                	li	a2,0
+ cb4:	85b6                	mv	a1,a3
+ cb6:	0685                	addi	a3,a3,1
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:248
+        while (segments[a-1][2][itwo] != '\0') {
+ cb8:	00d40733          	add	a4,s0,a3
+ cbc:	00970703          	lb	a4,9(a4)
+ cc0:	1e071063          	bnez	a4,ea0 <chuli_proc+0x2c2>
+ cc4:	c609                	beqz	a2,cce <chuli_proc+0xf0>
+ cc6:	80f1aa23          	sw	a5,-2028(gp) # 2000078c <numbertwo>
+ cca:	80b1a423          	sw	a1,-2040(gp) # 20000780 <itwo>
+ cce:	81018a13          	addi	s4,gp,-2032 # 20000788 <numberthree>
+ cd2:	20000717          	auipc	a4,0x20000
+ cd6:	aaa70713          	addi	a4,a4,-1366 # 2000077c <ithree>
+ cda:	000a2783          	lw	a5,0(s4)
+ cde:	4314                	lw	a3,0(a4)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:242
+        while (segments[a-1][1][ione] != '\0') {
+ ce0:	4601                	li	a2,0
+ ce2:	85b6                	mv	a1,a3
+ ce4:	0685                	addi	a3,a3,1
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:254
+        while (segments[a-1][3][ithree] != '\0') {
+ ce6:	00d40733          	add	a4,s0,a3
+ cea:	00e70703          	lb	a4,14(a4)
+ cee:	1c071063          	bnez	a4,eae <chuli_proc+0x2d0>
+ cf2:	c619                	beqz	a2,d00 <chuli_proc+0x122>
+ cf4:	80f1a823          	sw	a5,-2032(gp) # 20000788 <numberthree>
+ cf8:	20000797          	auipc	a5,0x20000
+ cfc:	a8b7a223          	sw	a1,-1404(a5) # 2000077c <ithree>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:261
+        if(strcmp(segments[a-1][0], "0101") == 0)
+ d00:	00000597          	auipc	a1,0x0
+ d04:	29858593          	addi	a1,a1,664 # f98 <strncpy+0x24>
+ d08:	8522                	mv	a0,s0
+ d0a:	3e11                	jal	81e <strcmp>
+ d0c:	e105                	bnez	a0,d2c <chuli_proc+0x14e>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:263
+                                   buf[0][0]=numberone;
+ d0e:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:267
+                                   SendOneFrame(buf);
+ d12:	81818513          	addi	a0,gp,-2024 # 20000790 <buf>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:263
+                                   buf[0][0]=numberone;
+ d16:	80f18c23          	sb	a5,-2024(gp) # 20000790 <buf>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:264
+                                   buf[0][1]=numbertwo;
+ d1a:	0009a783          	lw	a5,0(s3)
+ d1e:	80f18ca3          	sb	a5,-2023(gp) # 20000791 <buf+0x1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:265
+                                   buf[0][2]=numberthree;
+ d22:	000a2783          	lw	a5,0(s4)
+ d26:	80f18d23          	sb	a5,-2022(gp) # 20000792 <buf+0x2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:267
+                                   SendOneFrame(buf);
+ d2a:	352d                	jal	b54 <SendOneFrame>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:271
+        if(strcmp(segments[a-1][0], "0102") == 0)
+ d2c:	00000597          	auipc	a1,0x0
+ d30:	27458593          	addi	a1,a1,628 # fa0 <strncpy+0x2c>
+ d34:	8522                	mv	a0,s0
+ d36:	34e5                	jal	81e <strcmp>
+ d38:	e105                	bnez	a0,d58 <chuli_proc+0x17a>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:273
+                                           buf[1][0]=numberone;
+ d3a:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:277
+                                           SendOneFrame(buf);
+ d3e:	81818513          	addi	a0,gp,-2024 # 20000790 <buf>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:273
+                                           buf[1][0]=numberone;
+ d42:	80f18da3          	sb	a5,-2021(gp) # 20000793 <buf+0x3>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:274
+                                           buf[1][1]=numbertwo;
+ d46:	0009a783          	lw	a5,0(s3)
+ d4a:	80f18e23          	sb	a5,-2020(gp) # 20000794 <buf+0x4>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:275
+                                           buf[1][2]=numberthree;
+ d4e:	000a2783          	lw	a5,0(s4)
+ d52:	80f18ea3          	sb	a5,-2019(gp) # 20000795 <buf+0x5>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:277
+                                           SendOneFrame(buf);
+ d56:	3bfd                	jal	b54 <SendOneFrame>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:281
+        if(strcmp(segments[a-1][0], "0103") == 0)
+ d58:	00000597          	auipc	a1,0x0
+ d5c:	25058593          	addi	a1,a1,592 # fa8 <strncpy+0x34>
+ d60:	8522                	mv	a0,s0
+ d62:	3c75                	jal	81e <strcmp>
+ d64:	e105                	bnez	a0,d84 <chuli_proc+0x1a6>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:283
+                                                   buf[2][0]=numberone;
+ d66:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:287
+                                                   SendOneFrame(buf);
+ d6a:	81818513          	addi	a0,gp,-2024 # 20000790 <buf>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:283
+                                                   buf[2][0]=numberone;
+ d6e:	80f18f23          	sb	a5,-2018(gp) # 20000796 <buf+0x6>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:284
+                                                   buf[2][1]=numbertwo;
+ d72:	0009a783          	lw	a5,0(s3)
+ d76:	80f18fa3          	sb	a5,-2017(gp) # 20000797 <buf+0x7>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:285
+                                                   buf[2][2]=numberthree;
+ d7a:	000a2783          	lw	a5,0(s4)
+ d7e:	82f18023          	sb	a5,-2016(gp) # 20000798 <buf+0x8>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:287
+                                                   SendOneFrame(buf);
+ d82:	3bc9                	jal	b54 <SendOneFrame>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:291
+        if(strcmp(segments[a-1][0], "0201") == 0)
+ d84:	00000597          	auipc	a1,0x0
+ d88:	22c58593          	addi	a1,a1,556 # fb0 <strncpy+0x3c>
+ d8c:	8522                	mv	a0,s0
+ d8e:	3c41                	jal	81e <strcmp>
+ d90:	e105                	bnez	a0,db0 <chuli_proc+0x1d2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:293
+                                           buf1[0][0]=numberone;
+ d92:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:297
+                                           SendOneFrame1(buf1);
+ d96:	82418513          	addi	a0,gp,-2012 # 2000079c <buf1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:293
+                                           buf1[0][0]=numberone;
+ d9a:	82f18223          	sb	a5,-2012(gp) # 2000079c <buf1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:294
+                                           buf1[0][1]=numbertwo;
+ d9e:	0009a783          	lw	a5,0(s3)
+ da2:	82f182a3          	sb	a5,-2011(gp) # 2000079d <buf1+0x1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:295
+                                           buf1[0][2]=numberthree;
+ da6:	000a2783          	lw	a5,0(s4)
+ daa:	82f18323          	sb	a5,-2010(gp) # 2000079e <buf1+0x2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:297
+                                           SendOneFrame1(buf1);
+ dae:	3bd1                	jal	b82 <SendOneFrame1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:300
+        if(strcmp(segments[a-1][0], "0202") == 0)
+ db0:	00000597          	auipc	a1,0x0
+ db4:	20858593          	addi	a1,a1,520 # fb8 <strncpy+0x44>
+ db8:	8522                	mv	a0,s0
+ dba:	3495                	jal	81e <strcmp>
+ dbc:	e105                	bnez	a0,ddc <chuli_proc+0x1fe>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:302
+                                                  buf1[1][0]=numberone;
+ dbe:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:306
+                                                  SendOneFrame1(buf1);
+ dc2:	82418513          	addi	a0,gp,-2012 # 2000079c <buf1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:302
+                                                  buf1[1][0]=numberone;
+ dc6:	82f183a3          	sb	a5,-2009(gp) # 2000079f <buf1+0x3>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:303
+                                                  buf1[1][1]=numbertwo;
+ dca:	0009a783          	lw	a5,0(s3)
+ dce:	82f18423          	sb	a5,-2008(gp) # 200007a0 <buf1+0x4>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:304
+                                                  buf1[1][2]=numberthree;
+ dd2:	000a2783          	lw	a5,0(s4)
+ dd6:	82f184a3          	sb	a5,-2007(gp) # 200007a1 <buf1+0x5>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:306
+                                                  SendOneFrame1(buf1);
+ dda:	3365                	jal	b82 <SendOneFrame1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:309
+        if(strcmp(segments[a-1][0], "0203") == 0)
+ ddc:	00000597          	auipc	a1,0x0
+ de0:	1e458593          	addi	a1,a1,484 # fc0 <strncpy+0x4c>
+ de4:	8522                	mv	a0,s0
+ de6:	3c25                	jal	81e <strcmp>
+ de8:	e105                	bnez	a0,e08 <chuli_proc+0x22a>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:311
+                                                  buf1[2][0]=numberone;
+ dea:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:315
+                                                  SendOneFrame1(buf1);
+ dee:	82418513          	addi	a0,gp,-2012 # 2000079c <buf1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:311
+                                                  buf1[2][0]=numberone;
+ df2:	82f18523          	sb	a5,-2006(gp) # 200007a2 <buf1+0x6>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:312
+                                                  buf1[2][1]=numbertwo;
+ df6:	0009a783          	lw	a5,0(s3)
+ dfa:	82f185a3          	sb	a5,-2005(gp) # 200007a3 <buf1+0x7>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:313
+                                                  buf1[2][2]=numberthree;
+ dfe:	000a2783          	lw	a5,0(s4)
+ e02:	82f18623          	sb	a5,-2004(gp) # 200007a4 <buf1+0x8>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:315
+                                                  SendOneFrame1(buf1);
+ e06:	3bb5                	jal	b82 <SendOneFrame1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:319
+        if(strcmp(segments[a-1][0], "0301") == 0)
+ e08:	00000597          	auipc	a1,0x0
+ e0c:	1c058593          	addi	a1,a1,448 # fc8 <strncpy+0x54>
+ e10:	8522                	mv	a0,s0
+ e12:	3431                	jal	81e <strcmp>
+ e14:	e105                	bnez	a0,e34 <chuli_proc+0x256>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:321
+                                                   buf2[0][0]=numberone;
+ e16:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:325
+                                                   SendOneFrame2(buf2);
+ e1a:	83018513          	addi	a0,gp,-2000 # 200007a8 <buf2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:321
+                                                   buf2[0][0]=numberone;
+ e1e:	82f18823          	sb	a5,-2000(gp) # 200007a8 <buf2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:322
+                                                   buf2[0][1]=numbertwo;
+ e22:	0009a783          	lw	a5,0(s3)
+ e26:	82f188a3          	sb	a5,-1999(gp) # 200007a9 <buf2+0x1>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:323
+                                                   buf2[0][2]=numberthree;
+ e2a:	000a2783          	lw	a5,0(s4)
+ e2e:	82f18923          	sb	a5,-1998(gp) # 200007aa <buf2+0x2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:325
+                                                   SendOneFrame2(buf2);
+ e32:	3bbd                	jal	bb0 <SendOneFrame2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:328
+        if(strcmp(segments[a-1][0], "0302") == 0)
+ e34:	00000597          	auipc	a1,0x0
+ e38:	19c58593          	addi	a1,a1,412 # fd0 <strncpy+0x5c>
+ e3c:	8522                	mv	a0,s0
+ e3e:	32c5                	jal	81e <strcmp>
+ e40:	e105                	bnez	a0,e60 <chuli_proc+0x282>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:330
+                                                           buf2[1][0]=numberone;
+ e42:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:334
+                                                           SendOneFrame2(buf2);
+ e46:	83018513          	addi	a0,gp,-2000 # 200007a8 <buf2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:330
+                                                           buf2[1][0]=numberone;
+ e4a:	82f189a3          	sb	a5,-1997(gp) # 200007ab <buf2+0x3>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:331
+                                                           buf2[1][1]=numbertwo;
+ e4e:	0009a783          	lw	a5,0(s3)
+ e52:	82f18a23          	sb	a5,-1996(gp) # 200007ac <buf2+0x4>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:332
+                                                           buf2[1][2]=numberthree;
+ e56:	000a2783          	lw	a5,0(s4)
+ e5a:	82f18aa3          	sb	a5,-1995(gp) # 200007ad <buf2+0x5>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:334
+                                                           SendOneFrame2(buf2);
+ e5e:	3b89                	jal	bb0 <SendOneFrame2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:338
+        if(strcmp(segments[a-1][0], "0303") == 0)
+ e60:	00000597          	auipc	a1,0x0
+ e64:	17858593          	addi	a1,a1,376 # fd8 <strncpy+0x64>
+ e68:	8522                	mv	a0,s0
+ e6a:	3a55                	jal	81e <strcmp>
+ e6c:	e105                	bnez	a0,e8c <chuli_proc+0x2ae>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:340
+                                                           buf2[2][0]=numberone;
+ e6e:	00092783          	lw	a5,0(s2)
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:344
+                                                           SendOneFrame2(buf2);
+ e72:	83018513          	addi	a0,gp,-2000 # 200007a8 <buf2>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:340
+                                                           buf2[2][0]=numberone;
+ e76:	82f18b23          	sb	a5,-1994(gp) # 200007ae <buf2+0x6>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:341
+                                                           buf2[2][1]=numbertwo;
+ e7a:	0009a783          	lw	a5,0(s3)
+ e7e:	82f18ba3          	sb	a5,-1993(gp) # 200007af <buf2+0x7>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:342
+                                                           buf2[2][2]=numberthree;
+ e82:	000a2783          	lw	a5,0(s4)
+ e86:	82f18c23          	sb	a5,-1992(gp) # 200007b0 <buf2+0x8>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:344
+                                                           SendOneFrame2(buf2);
+ e8a:	331d                	jal	bb0 <SendOneFrame2>
+ e8c:	0451                	addi	s0,s0,20
+ e8e:	04b5                	addi	s1,s1,13
+ e90:	b379                	j	c1e <chuli_proc+0x40>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:244
+            numberone = numberone * 10 + (segments[a-1][1][ione] - '0');
+ e92:	036787b3          	mul	a5,a5,s6
+ e96:	fd070713          	addi	a4,a4,-48
+ e9a:	4605                	li	a2,1
+ e9c:	97ba                	add	a5,a5,a4
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:245
+            ione++;
+ e9e:	b3fd                	j	c8c <chuli_proc+0xae>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:250
+            numbertwo = numbertwo * 10 + (segments[a-1][2][itwo] - '0');
+ ea0:	036787b3          	mul	a5,a5,s6
+ ea4:	fd070713          	addi	a4,a4,-48
+ ea8:	4605                	li	a2,1
+ eaa:	97ba                	add	a5,a5,a4
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:251
+            itwo++;
+ eac:	b521                	j	cb4 <chuli_proc+0xd6>
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:256
+            numberthree = numberthree * 10 + (segments[a-1][3][ithree] - '0');
+ eae:	036787b3          	mul	a5,a5,s6
+ eb2:	fd070713          	addi	a4,a4,-48
+ eb6:	4605                	li	a2,1
+ eb8:	97ba                	add	a5,a5,a4
+D:\CH592\EVT\EXAM\PWMX\obj/../src/ws2812.c:257
+            ithree++;
+ eba:	b525                	j	ce2 <chuli_proc+0x104>
+
+00000ebc <GPIOB_ModeCfg>:
+GPIOB_ModeCfg():
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:74
+ *
+ * @return  none
+ */
+void GPIOB_ModeCfg(uint32_t pin, GPIOModeTypeDef mode)
+{
+    switch(mode)
+ ebc:	4791                	li	a5,4
+ ebe:	02b7ee63          	bltu	a5,a1,efa <GPIOB_ModeCfg+0x3e>
+ ec2:	00000717          	auipc	a4,0x0
+ ec6:	11e70713          	addi	a4,a4,286 # fe0 <strncpy+0x6c>
+ eca:	058a                	slli	a1,a1,0x2
+ ecc:	95ba                	add	a1,a1,a4
+ ece:	419c                	lw	a5,0(a1)
+ ed0:	97ba                	add	a5,a5,a4
+ ed2:	8782                	jr	a5
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:77
+    {
+        case GPIO_ModeIN_Floating:
+            R32_PB_PD_DRV &= ~pin;
+ ed4:	400017b7          	lui	a5,0x40001
+ ed8:	0d47a703          	lw	a4,212(a5) # 400010d4 <_eusrstack+0x1fffa8d4>
+ edc:	fff54513          	not	a0,a0
+ ee0:	8f69                	and	a4,a4,a0
+ ee2:	0ce7aa23          	sw	a4,212(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:78
+            R32_PB_PU &= ~pin;
+ ee6:	0d07a703          	lw	a4,208(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:90
+            R32_PB_DIR &= ~pin;
+            break;
+
+        case GPIO_ModeIN_PD:
+            R32_PB_PD_DRV |= pin;
+            R32_PB_PU &= ~pin;
+ eea:	8f69                	and	a4,a4,a0
+ eec:	0ce7a823          	sw	a4,208(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:91
+            R32_PB_DIR &= ~pin;
+ ef0:	0c07a703          	lw	a4,192(a5)
+ ef4:	8d79                	and	a0,a0,a4
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:101
+            R32_PB_DIR |= pin;
+            break;
+
+        case GPIO_ModeOut_PP_20mA:
+            R32_PB_PD_DRV |= pin;
+            R32_PB_DIR |= pin;
+ ef6:	0ca7a023          	sw	a0,192(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:107
+            break;
+
+        default:
+            break;
+    }
+}
+ efa:	8082                	ret
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:83
+            R32_PB_PD_DRV &= ~pin;
+ efc:	400017b7          	lui	a5,0x40001
+ f00:	0d47a683          	lw	a3,212(a5) # 400010d4 <_eusrstack+0x1fffa8d4>
+ f04:	fff54713          	not	a4,a0
+ f08:	8ef9                	and	a3,a3,a4
+ f0a:	0cd7aa23          	sw	a3,212(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:84
+            R32_PB_PU |= pin;
+ f0e:	0d07a683          	lw	a3,208(a5)
+ f12:	8d55                	or	a0,a0,a3
+ f14:	0ca7a823          	sw	a0,208(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:85
+            R32_PB_DIR &= ~pin;
+ f18:	0c07a683          	lw	a3,192(a5)
+ f1c:	8f75                	and	a4,a4,a3
+ f1e:	0ce7a023          	sw	a4,192(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:86
+            break;
+ f22:	8082                	ret
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:89
+            R32_PB_PD_DRV |= pin;
+ f24:	400017b7          	lui	a5,0x40001
+ f28:	0d47a703          	lw	a4,212(a5) # 400010d4 <_eusrstack+0x1fffa8d4>
+ f2c:	8f49                	or	a4,a4,a0
+ f2e:	0ce7aa23          	sw	a4,212(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:90
+            R32_PB_PU &= ~pin;
+ f32:	0d07a703          	lw	a4,208(a5)
+ f36:	fff54513          	not	a0,a0
+ f3a:	bf45                	j	eea <GPIOB_ModeCfg+0x2e>
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:95
+            R32_PB_PD_DRV &= ~pin;
+ f3c:	400017b7          	lui	a5,0x40001
+ f40:	0d47a683          	lw	a3,212(a5) # 400010d4 <_eusrstack+0x1fffa8d4>
+ f44:	fff54713          	not	a4,a0
+ f48:	8f75                	and	a4,a4,a3
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:100
+            R32_PB_PD_DRV |= pin;
+ f4a:	0ce7aa23          	sw	a4,212(a5)
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:101
+            R32_PB_DIR |= pin;
+ f4e:	0c07a703          	lw	a4,192(a5)
+ f52:	8d59                	or	a0,a0,a4
+ f54:	b74d                	j	ef6 <GPIOB_ModeCfg+0x3a>
+D:/CH592/EVT/EXAM/SRC/StdPeriphDriver/CH59x_gpio.c:100
+            R32_PB_PD_DRV |= pin;
+ f56:	400017b7          	lui	a5,0x40001
+ f5a:	0d47a703          	lw	a4,212(a5) # 400010d4 <_eusrstack+0x1fffa8d4>
+ f5e:	8f49                	or	a4,a4,a0
+ f60:	b7ed                	j	f4a <GPIOB_ModeCfg+0x8e>
+
+00000f62 <strlen>:
+strlen():
+ f62:	87aa                	mv	a5,a0
+ f64:	0785                	addi	a5,a5,1
+ f66:	fff7c703          	lbu	a4,-1(a5)
+ f6a:	ff6d                	bnez	a4,f64 <strlen+0x2>
+ f6c:	40a78533          	sub	a0,a5,a0
+ f70:	157d                	addi	a0,a0,-1
+ f72:	8082                	ret
+
+00000f74 <strncpy>:
+strncpy():
+ f74:	87aa                	mv	a5,a0
+ f76:	ca09                	beqz	a2,f88 <strncpy+0x14>
+ f78:	0585                	addi	a1,a1,1
+ f7a:	fff5c703          	lbu	a4,-1(a1)
+ f7e:	0785                	addi	a5,a5,1
+ f80:	167d                	addi	a2,a2,-1
+ f82:	fee78fa3          	sb	a4,-1(a5)
+ f86:	fb65                	bnez	a4,f76 <strncpy+0x2>
+ f88:	963e                	add	a2,a2,a5
+ f8a:	00c79363          	bne	a5,a2,f90 <strncpy+0x1c>
+ f8e:	8082                	ret
+ f90:	0785                	addi	a5,a5,1
+ f92:	fe078fa3          	sb	zero,-1(a5)
+ f96:	bfd5                	j	f8a <strncpy+0x16>
+ f98:	3130                	fld	fa2,96(a0)
+ f9a:	3130                	fld	fa2,96(a0)
+ f9c:	0000                	unimp
+ f9e:	0000                	unimp
+ fa0:	3130                	fld	fa2,96(a0)
+ fa2:	3230                	fld	fa2,96(a2)
+ fa4:	0000                	unimp
+ fa6:	0000                	unimp
+ fa8:	3130                	fld	fa2,96(a0)
+ faa:	3330                	fld	fa2,96(a4)
+ fac:	0000                	unimp
+ fae:	0000                	unimp
+ fb0:	3230                	fld	fa2,96(a2)
+ fb2:	3130                	fld	fa2,96(a0)
+ fb4:	0000                	unimp
+ fb6:	0000                	unimp
+ fb8:	3230                	fld	fa2,96(a2)
+ fba:	3230                	fld	fa2,96(a2)
+ fbc:	0000                	unimp
+ fbe:	0000                	unimp
+ fc0:	3230                	fld	fa2,96(a2)
+ fc2:	3330                	fld	fa2,96(a4)
+ fc4:	0000                	unimp
+ fc6:	0000                	unimp
+ fc8:	3330                	fld	fa2,96(a4)
+ fca:	3130                	fld	fa2,96(a0)
+ fcc:	0000                	unimp
+ fce:	0000                	unimp
+ fd0:	3330                	fld	fa2,96(a4)
+ fd2:	3230                	fld	fa2,96(a2)
+ fd4:	0000                	unimp
+ fd6:	0000                	unimp
+ fd8:	3330                	fld	fa2,96(a4)
+ fda:	3330                	fld	fa2,96(a4)
+ fdc:	0000                	unimp
+ fde:	0000                	unimp
+ fe0:	fef4                	fsw	fa3,124(a3)
+ fe2:	ffff                	0xffff
+ fe4:	ff1c                	fsw	fa5,56(a4)
+ fe6:	ffff                	0xffff
+ fe8:	ff44                	fsw	fs1,60(a4)
+ fea:	ffff                	0xffff
+ fec:	ff5c                	fsw	fa5,60(a4)
+ fee:	ffff                	0xffff
+ ff0:	ff76                	fsw	ft9,188(sp)
+ ff2:	ffff                	0xffff
